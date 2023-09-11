@@ -41,13 +41,19 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #'django.contrib.sites',#allauth
 
     # Apps
     'playground',
 
-    #Other
+    #cloudinary
     'cloudinary_storage',
     'cloudinary',
+
+    #allauth
+    #'allauth',
+    #'allauth.account',
+    #'allauth.socialaccount',
 ]
 
 MIDDLEWARE = [
@@ -77,6 +83,15 @@ TEMPLATES = [
         },
     },
 ]
+#allauth
+
+#SITE_ID = 1
+
+#ACCOUNT_EMAIL_VERIFICATION = 'none'
+
+#LOGIN_REDIRECT_URL = '/'
+
+
 
 WSGI_APPLICATION = 'fun_and_games.wsgi.application'
 
