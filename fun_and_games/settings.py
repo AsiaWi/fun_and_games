@@ -26,9 +26,10 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY')
-
+GOOGLE_API_KEY=os.environ.get('GOOGLE_API_KEY')
+RICHTEXTFIELD_KEY=os.environ.get('RICHTEXTFIELD_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['8000-asiawi-funandgames-0ypziizicl3.ws-eu104.gitpod.io', 'fun-and-games-a99303d46c12.herokuapp.com']
 
@@ -55,6 +56,9 @@ INSTALLED_APPS = [
     #'allauth',
     #'allauth.account',
     #'allauth.socialaccount',
+
+    'address',
+    'djrichtextfield'
 ]
 
 MIDDLEWARE = [
@@ -84,7 +88,24 @@ TEMPLATES = [
         },
     },
 ]
+# djrichtextfield 
 
+DJRICHTEXTFIELD_CONFIG = {
+    'js': ['//cdn.tiny.cloud/1/RICHTEXTFIELD_KEY/tinymce/5/tinymce.min.js'],
+    'init_template': 'djrichtextfield/init/tinymce.js',
+    'settings': {
+        'menubar': True,
+        'plugins': 'link image',
+        'toolbar': [
+            ['Format', 'Bold', 'Italic'],
+            ['BulletedList'],
+            ['Undo', 'Redo'],
+            ['Maximise']
+        ],
+
+        'width': 700
+    }
+}
  #allauth
 
 #SITE_ID = 1
