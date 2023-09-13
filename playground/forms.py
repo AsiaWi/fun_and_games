@@ -4,7 +4,9 @@ from djrichtextfield.widgets import RichTextWidget
 
 
 class ActivityForm(forms.ModelForm):
-    
+    '''
+    Create form to add Activity
+    '''
     class Meta:
         model = Activity
         fields = ['title', 'excerpt', 'featured_image', 'image_alt', 'content', 'link', 'privacy']
