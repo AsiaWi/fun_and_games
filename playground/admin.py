@@ -6,8 +6,7 @@ from .models import Activity
 class ActivityAdmin(admin.ModelAdmin):
     list_display = (
         'author', 
-        'title', 
-        'address', 
+        'title',
         'featured_image', 
         'image_alt', 
         'content',

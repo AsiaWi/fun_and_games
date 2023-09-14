@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #'django.contrib.sites', #allauth
+    'django.contrib.sites', #allauth
 
     # Apps
     'playground',
@@ -52,11 +52,11 @@ INSTALLED_APPS = [
     'cloudinary',
 
     #allauth
-    #'allauth',
-    #'allauth.account',
-    #'allauth.socialaccount',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
 
-    'djrichtextfield'
+    'django_quill'
 ]
 
 MIDDLEWARE = [
@@ -67,6 +67,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware'
 ]
 
 ROOT_URLCONF = 'fun_and_games.urls'
@@ -86,32 +87,15 @@ TEMPLATES = [
         },
     },
 ]
-# djrichtextfield 
 
-DJRICHTEXTFIELD_CONFIG = {
-    'js': ['//cdn.tiny.cloud/1/RICHTEXTFIELD_KEY/tinymce/5/tinymce.min.js'],
-    'init_template': 'djrichtextfield/init/tinymce.js',
-    'settings': {
-        'menubar': True,
-        'plugins': 'link image',
-        'toolbar': [
-            ['Format', 'Bold', 'Italic'],
-            ['BulletedList'],
-            ['Undo', 'Redo'],
-            ['Maximise']
-        ],
-
-        'width': 700
-    }
-}
  #allauth
 
-#SITE_ID = 1
+SITE_ID = 1
 
-#ACCOUNT_EMAIL_VERIFICATION = 'none'
+ACCOUNT_EMAIL_VERIFICATION = 'none'
 
-#LOGIN_REDIRECT_URL = '/'
-#LOGOUT_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
 
 
 
