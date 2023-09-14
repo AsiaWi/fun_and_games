@@ -56,7 +56,8 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
 
-    'django_quill'
+    'django_quill',
+    'crispy_forms'
 ]
 
 MIDDLEWARE = [
@@ -87,7 +88,7 @@ TEMPLATES = [
         },
     },
 ]
-
+CRISPY_TEMPLATE_PACK= 'bootstrap4'
  #allauth
 
 SITE_ID = 1

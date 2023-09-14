@@ -21,6 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
     path('', include('playground.urls')),
-    path('djrichtextfield/', include('djrichtextfield.urls')),
     path('playground/', include('playground.urls'))
 ]

@@ -1,6 +1,8 @@
 from .models import Activity
 from django import forms
-from djrichtextfield.widgets import RichTextWidget
+
+
+
 
 
 class ActivityForm(forms.ModelForm):
@@ -9,8 +11,8 @@ class ActivityForm(forms.ModelForm):
     '''
     class Meta:
         model = Activity
-        fields = ['title', 'excerpt', 'featured_image', 'image_alt', 'content', 'link', 'privacy']
-        content = forms.CharField(widget=RichTextWidget())
+        fields = ['title', 'excerpt', 'featured_image', 'image_alt', 'content', 'link', 'privacy',]
+        
 
         labels = {
             'title': 'Activity Title',

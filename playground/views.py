@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views.generic import TemplateView, CreateView
 from .models import Activity
 from django.contrib.auth.mixins import LoginRequiredMixin
+from .forms import ActivityForm
 
 # Create your views here.
 class IndexView(TemplateView):
@@ -14,6 +15,7 @@ class AddActivity(LoginRequiredMixin, CreateView):
     template_name = 'playground/add_activity.html'
     model = Activity
     success_url = '/playground/'
+    form_class = ActivityForm
 
     def form_valid(self, form):
         form.instance.user = self.request.user
