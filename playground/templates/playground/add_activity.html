@@ -10,7 +10,6 @@
        <h1>Add your post here!</h1> 
        {% csrf_token %}
        {{ form.media }}
-       
        {{ form | crispy }}
        <div>
         <button type="submit" class="btn btn-dark">Submit</button>
