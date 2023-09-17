@@ -8,6 +8,7 @@
 <div class="container-fluid">
     <div class="row">
         {% for activity in activities  %}
+        {% if request.user == activity.author %}
         <div class="col-lg-4 col-md-6 col-12 mb-4">
             <div class="card" id="card">
                 <img id='card-img' src="{{ activity.featured_image.url }}" class="card-img-top" alt="{{ activity.image_alt }}">
@@ -21,8 +22,8 @@
                 </div>
             </div>
         </div>
+        {% endif %}
         {% endfor %}
-        
     </div>
 </div>
 
