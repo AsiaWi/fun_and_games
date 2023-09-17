@@ -4,22 +4,27 @@
 {% block content %}
 
 
-{% for activity in activities %}
-<div class="container text-center">
+
+<div class="container-fluid">
     <div class="row">
-        <div class="col-4">
-            <div>
-                <img src="{{ activity.featured_image.url }}" class="card-img-top" alt="{{ activity.image_alt }}">
+        {% for activity in activities %}
+        <div class="col-lg-4 col-md-6 col-12 mb-4">
+            <div class="card" id="card">
+                <img id='card-img' src="{{ activity.featured_image.url }}" class="card-img-top" alt="{{ activity.image_alt }}">
+                <div class="overlay-text">
+                <span class="card-text text-muted">Posted by {{ activity.author}}|| {{ activity.date_created}}</span>
+                </div>
                 <div class="card-body">
                     <h1 class="card-title">{{ activity.title }}</h1>
                     <p class="card-text">{{ activity.excerpt }}</p>
                     <a href="#" class="btn btn-primary">View post</a>
-                   
                 </div>
             </div>
         </div>
+        {% endfor %}
     </div>
 </div>
 
-{% endfor %}
+
+
 {% endblock %}

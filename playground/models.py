@@ -7,8 +7,8 @@ from django_quill.fields import QuillField
 # Create your models here.
 
 PRIVACY = (
-    ('private', 'Private'),
-    ('public', 'Public')
+    ('private', 'Keep it private'),
+    ('public', 'Make it public')
 )
 class Activity(models.Model):
     '''
