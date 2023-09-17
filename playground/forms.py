@@ -11,10 +11,11 @@ class ActivityForm(forms.ModelForm):
     '''
     class Meta:
         model = Activity
-        fields = ['title', 'excerpt', 'featured_image', 'image_alt', 'content', 'link', 'privacy',]
+        fields = ['author', 'title', 'excerpt', 'featured_image', 'image_alt', 'content', 'link', 'privacy',]
         
 
         labels = {
+            'author': 'Username',
             'title': 'Activity Title',
             'excerpt': 'Post Teaser',
             'featured_image': 'Add Image',
