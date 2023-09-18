@@ -48,6 +48,12 @@ html, body {
 
    }
 
+   .btn-custom {
+    height: 40px;
+    width: 50%;
+    margin: 5%;
+   }
+
    /* for small to medium screen sizes from 500px wide and up */
 @media screen and (max-width: 500px) {
   .overlay-text {

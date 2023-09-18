@@ -5,8 +5,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import ActivityForm
 
 # Create your views here.
-class IndexView(TemplateView):
-    template_name = 'playground/index.html'
+
 
 class AddActivity(LoginRequiredMixin, CreateView):
     '''

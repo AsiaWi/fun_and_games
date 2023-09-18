@@ -4,7 +4,11 @@
 {% block content %}
 <div class="container text-center">
     <div class="row">
-        <div class="col-md-6 offset-md-3">
+        {% if request.user == activity.author %}
+        <div class="col-md-8 mx-auto">
+            {% else %}
+            <div class="col-md-6 mx-auto">
+                {% endif %}
             <div class="bg-light">
                 <h1>{{activity.title}}</h1>
             </div>
@@ -38,8 +42,13 @@
             </div>
 
         </div>
-
+        {% if request.user == activity.author %}
+        <div class="d-grid gap-2 col-4 mx-auto">
+            <div>
+            <button class="btn btn-success btn-custom" type="button">Edit</button>
+            <button class="btn btn-danger btn-custom" type="button">Delete</button>
+          </div>
     </div>
-
+{% endif %}
 </div>
 {% endblock content %}
