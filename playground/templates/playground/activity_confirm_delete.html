@@ -2,5 +2,17 @@
 {% block title %} Delete {{ activity.title }} {% endblock %}
 
 {% block content %}
-confirm
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h1 class="display-4">CONFIRM</h1>
+            <p class="lead">Are you sure you want to delete the post?</p>
+            <form method="POST">
+                {% csrf_token %}
+                <input type="submit" class="btn btn-primary" value="YES, CONTINUE">
+            </form>
+            <a href="{% url 'profile_wall' %}" class="btn btn-primary" >NO, GO BACK TO MY PROFILE</a>
+        </div>
+    </div>
+</div>
 {% endblock content %}

@@ -17,7 +17,7 @@
                 <div class="card-body">
                     <h1 class="card-title">{{ activity.title }}</h1>
                     <p class="card-text">{{ activity.excerpt }}</p>
-                    <a href="{% url 'view_activity_details' activity.id %}" class="btn btn-primary">View post</a>
+                    <a href="{% url 'view_activity_details' activity.pk %}" class="btn btn-primary">View post</a>
                 </div>
             </div>
         </div>
