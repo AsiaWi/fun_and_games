@@ -8,6 +8,7 @@
 <div class="container-fluid">
     <div class="row">
         {% for activity in activities  %}
+        {% if activity.privacy == 'public' %}
         <div class="col-lg-4 col-md-6 col-12 mb-4">
             <div class="card" id="card">
                 <img id='card-img' src="{{ activity.featured_image.url }}" class="card-img-top" alt="{{ activity.image_alt }}">
@@ -21,10 +22,37 @@
                 </div>
             </div>
         </div>
-        {% endfor %}
-        
+        {% endif %}
+        {% endfor %}  
     </div>
 </div>
+{% if is_paginated %}
+<nav aria-label="...">
+    <ul class="pagination">
+      <li class="page-item active">
+        <a class="page-link" href="#" tabindex="-1"> Previous</a>
+      </li>
+        <li class="page-item disabled"></li>
+        <a class="page-link" href="#" tabindex="-1">Previous</a>
+      </li>
+      
+     
+      <li class="page-item"><a class="page-link" href="#">1</a></li>
+      {% if page_obj.has_next %}
+      <li class="page-item active">
+        {% else %}
+        <li class="page-item disabled"></li>
+        {% endif %}
+        <a class="page-link" href="">2 <span class="sr-only">(current)</span></a>
+      </li>
+      
+      <li class="page-item"><a class="page-link" href="?page={{page_obj.next_page_number }}">3</a></li>
+      <li class="page-item">
+        <a class="page-link" href="#">Next</a>
+      </li>
+    </ul>
+  </nav>
+  {% endif %}
 
 
 

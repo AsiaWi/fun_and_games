@@ -5,17 +5,18 @@ from django import forms
 
 
 
+
 class ActivityForm(forms.ModelForm):
     '''
     Create form to add Activity
     '''
+
     class Meta:
         model = Activity
-        fields = ['author', 'title', 'excerpt', 'featured_image', 'image_alt', 'content', 'link', 'privacy',]
+        fields = ['title', 'excerpt', 'featured_image', 'image_alt', 'content', 'link', 'privacy',]
         
 
         labels = {
-            'author': 'Username',
             'title': 'Activity Title',
             'excerpt': 'Post Teaser',
             'featured_image': 'Add Image',

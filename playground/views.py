@@ -13,11 +13,11 @@ class AddActivity(LoginRequiredMixin, CreateView):
     '''
     template_name = 'playground/add_activity.html'
     model = Activity
-    success_url = '/playground/'
+    success_url = '/profile/'
     form_class = ActivityForm
 
     def form_valid(self, form):
-        form.instance.user = self.request.user
+        form.instance.author = self.request.user
         return super(AddActivity, self).form_valid(form)
 
 
@@ -36,7 +36,7 @@ class DeleteActivity(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 class DisplayActivityList(ListView):
     model = Activity
     template_name = 'playground/index.html'
-    paginate_by = 3
+    #paginate_by = 3
     context_object_name = 'activities'
 
 
