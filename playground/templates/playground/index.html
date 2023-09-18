@@ -4,7 +4,18 @@
 {% block content %}
 
 
-
+<div class="container-fluid p-0">
+  <div class="hero-container">
+      <img src="/static/media/hero_img.webp" alt="a carousel photo with people having fun" class="hero-image">
+      <div class="overlay">
+        <h1 class="display-4">Fun&Games</h1>
+        <p>Life is too short to be boring, so why not embrace your inner weirdness and share your quirkiest activities with us?</p>
+        <p class="inactive">From the extraordinary to the everyday, we celebrate all things fun and unique. Sign up now and be a part of the adventure!</p>
+        <a href="{% url 'account_signup' %}" class="btn btn-primary">Join the fun!</a>
+      </div>
+  </div>
+</div>
+<div class="position-styling">
 <div class="container-fluid">
     <div class="row">
         {% for activity in activities  %}
@@ -24,6 +35,7 @@
         </div>
         {% endif %}
         {% endfor %}  
+    </div>
     </div>
 </div>
 {% if is_paginated %}

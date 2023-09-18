@@ -4,8 +4,15 @@
 
 {% block content %}
 
-
-
+<div class="container-fluid p-0">
+    <div class="hero-container">
+        <img src="/static/media/hero_img.webp" alt="a carousel photo with people having fun" class="hero-image">
+        <div class="overlay">
+            <span>You are logged in as <strong>'{{request.user.username }}'</strong><span>
+        </div>
+    </div>
+  </div>
+<div class="position-styling">
 <div class="container-fluid">
     <div class="row">
         {% for activity in activities  %}
@@ -26,6 +33,7 @@
         {% endif %}
         {% endfor %}
     </div>
+</div>
 </div>
 
 
