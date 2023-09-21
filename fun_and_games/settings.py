@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 import os 
 import dj_database_url
+from django.contrib.messages import constants as messages
 if os.path.isfile('env.py'):
     import env
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -102,6 +103,14 @@ LOGOUT_REDIRECT_URL = '/'
 
 WSGI_APPLICATION = 'fun_and_games.wsgi.application'
 
+# messages for users
+MESSAGE_TAGS ={
+    messages.DEBUG: 'debug',
+    messages.INFO: 'info',
+    messages.SUCCESS: 'success',
+    messages.WARNING: 'warning',
+    messages.ERROR: 'error',
+}
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases

@@ -24,5 +24,12 @@
         {% endblock content %}
     </main>
     {% include 'includes/footer.html' %}
+    <script>
+        setTimeout(function() {
+            let messages = document.getElementById('alert');
+            let alert = new bootstrap.Alert(messages);
+            alert.close();
+        }, 5000);
+    </script>
 </body>
 </html>

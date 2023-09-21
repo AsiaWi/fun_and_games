@@ -33,11 +33,9 @@ class DeleteActivity(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         activity_id = self.kwargs.get('activity_id')
         return Activity.objects.get(pk=activity_id)
 
+
 class UpdateActivity(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
-    def test_func(self):
-        return self.request.user == self.get_object().author
-    
     model = Activity
     success_url = '/profile/'
     form_class = ActivityForm
@@ -46,6 +44,9 @@ class UpdateActivity(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     def get_object(self, queryset=None):
         activity_id = self.kwargs.get('activity_id')
         return Activity.objects.get(pk=activity_id)
+
+    def test_func(self):
+        return self.request.user == self.get_object().author
 
 
 class DisplayActivityList(ListView):

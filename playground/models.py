@@ -24,6 +24,7 @@ class Activity(models.Model):
     content = QuillField(blank=False)
     link = models.CharField(max_length=200, blank=True)
     privacy = models.CharField(max_length=10, choices=PRIVACY, default='private')
+    likes = models.ManyToManyField(User, default=None, blank=True)
     
     class Meta:
         ordering = ['-date_created']
