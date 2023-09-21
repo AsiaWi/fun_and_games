@@ -22,7 +22,7 @@ class Activity(models.Model):
     featured_image = ResizedImageField(size=[400, None], quality=100, upload_to='activities/', force_format='WEBP', blank=False, null=False)
     image_alt = models.CharField(max_length=200, null=False, blank=False)
     content = QuillField(blank=False)
-    link = models.CharField(max_length=200, null=True)
+    link = models.CharField(max_length=200, blank=True)
     privacy = models.CharField(max_length=10, choices=PRIVACY, default='private')
     
     class Meta:
