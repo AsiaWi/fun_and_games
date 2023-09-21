@@ -45,7 +45,7 @@
         {% if request.user == activity.author %}
         <div class="d-grid gap-2 col-4 mx-auto">
             <div>
-            <a href=""><button class="btn btn-success btn-custom" type="button">Edit</button></a>
+            <a href="{% url 'edit_activity' activity_id=activity.id %}"><button class="btn btn-success btn-custom" type="button">Edit</button></a>
             <a href="{% url 'activity_confirm_delete' activity_id=activity.id %}"><button class="btn btn-danger btn-custom" type="button">Delete</button></a>
           </div>
     </div>

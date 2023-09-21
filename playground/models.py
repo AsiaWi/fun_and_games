@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django_resized import ResizedImageField
-from PIL import Image, ImageFile, ImageOps, ExifTags
+# from PIL import Image, ImageFile, ImageOps, ExifTags
 from django_quill.fields import QuillField
 
 # Create your models here.

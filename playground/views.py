@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView, CreateView, ListView, DetailView, DeleteView
+from django.views.generic import TemplateView, CreateView, ListView, DetailView, DeleteView, UpdateView
 from .models import Activity
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from .forms import ActivityForm
@@ -32,6 +32,21 @@ class DeleteActivity(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     def get_object(self, queryset=None):
         activity_id = self.kwargs.get('activity_id')
         return Activity.objects.get(pk=activity_id)
+
+class UpdateActivity(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+
+    def test_func(self):
+        return self.request.user == self.get_object().author
+    
+    model = Activity
+    success_url = '/profile/'
+    form_class = ActivityForm
+    template_name = 'playground/edit_activity.html'
+
+    def get_object(self, queryset=None):
+        activity_id = self.kwargs.get('activity_id')
+        return Activity.objects.get(pk=activity_id)
+
 
 class DisplayActivityList(ListView):
     model = Activity

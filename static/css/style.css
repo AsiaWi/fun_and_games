@@ -73,7 +73,9 @@ html, body {
     top: 35%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(245, 237, 237, 0.7);
+    background-color: rgba(245, 237, 237, 0.5);
+    border-style: outset;
+    border-color: rgba(245, 237, 237, 0.7);
     padding: 20px;
     text-align: center;
     height:fit-content;
