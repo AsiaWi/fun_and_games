@@ -11,30 +11,31 @@
             <span>You are logged in as <strong>'{{request.user.username }}'</strong><span>
         </div>
     </div>
-  </div>
-<div class="position-styling">
-<div class="container-fluid">
-    <div class="row">
-        {% for activity in activities  %}
-        {% if request.user == activity.author %}
-        <div class="col-lg-4 col-md-6 col-12 mb-4">
-            <div class="card" id="card">
-                <img id='card-img' src="{{ activity.featured_image.url }}" class="card-img-top" alt="{{ activity.image_alt }}">
-                <div class="overlay-text">
-                <span class="card-text text-muted">Posted by {{ activity.author}}|| {{ activity.date_created.date}}</span>
-                </div>
-                <div class="card-body">
-                    <h1 class="card-title">{{ activity.title }}</h1>
-                    <p class="card-text">{{ activity.excerpt }}</p>
-                    <a href="{% url 'view_activity_details' activity.id %}" class="btn btn-primary">View post</a>
+</div>
+<div class="container-fluid position-styling "  >
+    <div class="row" >
+            {% for activity in activities  %}
+            {% if request.user == activity.author %}
+            <div class="col-lg-4 col-md-6 col-12 mb-4">
+                <div class="card" id="card">
+                    <img id='card-img' src="{{ activity.featured_image.url }}" class="card-img-top"
+                        alt="{{ activity.image_alt }}">
+                    <div class="overlay-text">
+                        <span class="card-text text-muted">Posted by {{ activity.author}}||
+                            {{ activity.date_created.date}}</span>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="card-title">{{ activity.title }}</h1>
+                        <p class="card-text">{{ activity.excerpt }}</p>
+                        <a href="{% url 'view_activity_details' activity.id %}" class="btn btn-primary">View post</a>
+                    </div>
                 </div>
             </div>
+            {% endif %}
+            {% endfor %}
         </div>
-        {% endif %}
-        {% endfor %}
     </div>
-</div>
-</div>
+
 
 
 

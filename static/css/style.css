@@ -102,7 +102,7 @@ html, body {
     top: 40%;
   }
 }
-   /* for medium to large screen sizes from 800px wide and down */
+   /* for medium to large screen sizes from 900px wide and down */
    @media screen and (min-width: 900px) {
     .position-styling {
       position: absolute;

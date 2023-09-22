@@ -1,8 +1,9 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView, CreateView, ListView, DetailView, DeleteView, UpdateView
-from .models import Activity
+from .models import Activity, Comment
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from .forms import ActivityForm
+from .forms import ActivityForm, CommentForm
+from django.urls import reverse_lazy
 
 # Create your views here.
 
@@ -15,6 +16,11 @@ class AddActivity(LoginRequiredMixin, CreateView):
     model = Activity
     success_url = '/profile/'
     form_class = ActivityForm
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['add_activity_form'] = self.form_class()
+        return context
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -66,3 +72,12 @@ class DisplayActivityDetails(DetailView):
     model = Activity
     template_name = 'playground/view_activity_details.html'
     context_object_name = 'activity'
+    form_class = CommentForm
+    success_url = '/profile/'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['add_comment_form'] = self.form_class()
+        return context
+    
+    

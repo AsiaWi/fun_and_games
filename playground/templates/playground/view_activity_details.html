@@ -2,6 +2,8 @@
 {% block title %} {{ activity.title }} {% endblock %}
 
 {% block content %}
+
+{% load crispy_forms_tags %}
 <div class="container mt-4 text-center">
     <div class="row">
         {% if request.user == activity.author %}
@@ -9,46 +11,82 @@
             {% else %}
             <div class="col-md-6 mx-auto">
                 {% endif %}
-            <div class="bg-light">
-                <h1>{{activity.title}}</h1>
-            </div>
-            <div class="bg-light mt-4">
-                <h2>
-                    {{ activity.excerpt}}
-                </h2>
-                <div class="row align-items-end">
-                    <div class="col">
-                        Posted by:
-                        <br />
-                        {{ activity.author }}
+                <div class="bg-light">
+                    <h1>{{activity.title}}</h1>
+                </div>
+                <div class="bg-light mt-4">
+                    <h2>
+                        {{ activity.excerpt}}
+                    </h2>
+                    <div class="row align-items-end">
+                        <div class="col">
+                            Posted by:
+                            <br />
+                            {{ activity.author }}
+                        </div>
+                        <div class="col">
+                            Commented:
+                            <br />
+                            0
+                        </div>
+                        <div class="col">
+                            Liked:
+                            <br />
+                            {{ activity.likes }}0
+                        </div>
                     </div>
-                    <div class="col">
-                        Commented:
-                        <br />
-                        0
-                    </div>
-                    <div class="col">
-                        Liked:
-                        <br />
-                        {{ activity.likes }}0
+                </div>
+                <div class="mt-4">
+                    <img src="{{ activity.featured_image.url }}" class="img-fluid" alt=" {{activity.image_alt}}">
+                </div>
+                <div class="bg-light mt-4">
+                    {{ activity.content.html|safe }}
+                </div>
+                {% if user.is_authenticated %}
+                <div class="container">
+                    <form method="POST" class=" form">
+                        {% csrf_token %}
+                        {{ add_comment_form | crispy }}
+                        <div>
+                            <button type="submit" class="btn btn-dark">Submit</button>
+                        </div>
+                    </form>
+                </div>
+                {% else %}
+                <div class="bg-transparent mt-4">
+                    Login to leave a comment:
+                    <a class="btn btn-outline-secondary btn-sm" href="{% url 'account_login' %}">SIGN-IN</a>
+                </div>
+                {% endif %}
+                <div class="bg-light mt-4">
+                    <h3>Comments:</h3>
+                    <hr>
+                    <div class="comments">
+                        {% for comment in activity.comments.all %}
+                        <div class="comment">
+                            <span>{{ comment.comment_author.username }}</span>
+                            <span>{{ comment.created_date }}</span>
+                            <p>{{ comment.comment_content }}</p>
+                        </div>
+                        {% empty %}
+                        <p>No comments yet.</p>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
-            <div class="mt-4">
-                <img src="{{ activity.featured_image.url }}" class="img-fluid" alt=" {{activity.image_alt}}">
-            </div>
-            <div class="bg-light mt-4">
-                {{ activity.content.html|safe }}
-            </div>
-
-        </div>
+        
         {% if request.user == activity.author %}
         <div class="d-grid gap-2 col-4 mx-auto">
             <div>
-            <a href="{% url 'edit_activity' activity_id=activity.id %}"><button class="btn btn-success btn-custom" type="button">Edit</button></a>
-            <a href="{% url 'activity_confirm_delete' activity_id=activity.id %}"><button class="btn btn-danger btn-custom" type="button">Delete</button></a>
-          </div>
+                <a href="{% url 'edit_activity' activity_id=activity.id %}"><button class="btn btn-success btn-custom"
+                        type="button">Edit</button></a>
+                <a href="{% url 'activity_confirm_delete' activity_id=activity.id %}"><button
+                        class="btn btn-danger btn-custom" type="button">Delete</button></a>
+            </div>
+        </div>
+        {% endif %}
     </div>
-{% endif %}
-</div>
-{% endblock content %}
+    </div>
+
+
+    {% endblock content %}
