@@ -55,7 +55,7 @@
                 {% else %}
                 <div class="bg-transparent mt-4">
                     Login to leave a comment:
-                    <a class="btn btn-outline-secondary btn-sm" href="{% url 'account_login' %}">SIGN-IN</a>
+                    <a class="btn btn-outline-secondary btn-sm" href="{% url 'account_login' %}?next={{ request.get_full_path }}">SIGN-IN</a>
                 </div>
                 {% endif %}
                 <div class="bg-light mt-4">
