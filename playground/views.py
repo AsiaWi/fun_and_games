@@ -4,6 +4,10 @@ from .models import Activity, Comment
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from .forms import ActivityForm, CommentForm
 from django.urls import reverse_lazy
+from django.http import HttpResponseRedirect
+from django.urls import reverse
+from django.shortcuts import get_object_or_404
+
 
 # Create your views here.
 
@@ -73,11 +77,22 @@ class DisplayActivityDetails(DetailView):
     template_name = 'playground/view_activity_details.html'
     context_object_name = 'activity'
     form_class = CommentForm
-    success_url = '/profile/'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['add_comment_form'] = self.form_class()
+        context['comments'] = Comment.objects.filter(activity=self.object)
         return context
-    
-    
+
+    def post(self, request, *args, **kwargs):
+        activity = self.get_object()  # Use get_object() to retrieve the Activity object
+        form = self.form_class(request.POST)
+
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.comment_author = self.request.user
+            comment.activity = activity  # Assign the activity
+            comment.save()
+            return HttpResponseRedirect(reverse('view_activity_details', kwargs={'pk': activity.pk}))
+        else:
+            return self.render_to_response(self.get_context_data(form=form))

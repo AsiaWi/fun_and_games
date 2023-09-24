@@ -13,7 +13,9 @@
         with us?</p>
       <p class="inactive">From the extraordinary to the everyday, we celebrate all things fun and unique. Sign up now
         and be a part of the adventure!</p>
+        {% if not user.is_authenticated %}
       <a href="{% url 'account_signup' %}" class="btn btn-primary">Join the fun!</a>
+      {% endif %}
     </div>
   </div>
 </div>

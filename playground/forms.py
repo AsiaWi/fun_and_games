@@ -33,7 +33,7 @@ class CommentForm(forms.ModelForm):
 
     class Meta:
         model = Comment
-        fields = ['comment_content']
+        fields = ['comment_content',]
         
         labels = {
             'comment_content': 'Leave your comment here:'
