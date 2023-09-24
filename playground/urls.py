@@ -1,5 +1,6 @@
 from django.urls import path
-from .views import DisplayActivityList, AddActivity, DisplayActivityDetails, DisplayProfileWall, DeleteActivity, UpdateActivity
+from . import views
+from .views import DisplayActivityList, AddActivity, DisplayActivityDetails, DisplayProfileWall, DeleteActivity, UpdateActivity, ActivityLike
 
 # path list
 urlpatterns = [
@@ -9,4 +10,5 @@ urlpatterns = [
     path('<int:pk>/', DisplayActivityDetails.as_view(), name='view_activity_details'),
     path('delete/<int:activity_id>/', DeleteActivity.as_view(), name='activity_confirm_delete'),
     path('edit/<int:activity_id>/', UpdateActivity.as_view(), name='edit_activity'),
+    path('like/<int:pk>', views.ActivityLike, name="like"),
 ]

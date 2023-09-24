@@ -82,17 +82,34 @@ class DisplayActivityDetails(DetailView):
         context = super().get_context_data(**kwargs)
         context['add_comment_form'] = self.form_class()
         context['comments'] = Comment.objects.filter(activity=self.object)
+        # likes
+        check_likes = get_object_or_404(Activity, id=self.kwargs['pk'])
+        liked = False
+        if check_likes.likes.filter(id=self.request.user.id).exists():
+            liked = True
+        context['total_num_of_likes'] = check_likes.total_num_of_likes()
+        context['activity_liked'] = liked
         return context
 
     def post(self, request, *args, **kwargs):
-        activity = self.get_object()  # Use get_object() to retrieve the Activity object
+        activity = self.get_object()
         form = self.form_class(request.POST)
 
         if form.is_valid():
             comment = form.save(commit=False)
             comment.comment_author = self.request.user
-            comment.activity = activity  # Assign the activity
+            comment.activity = activity
             comment.save()
             return HttpResponseRedirect(reverse('view_activity_details', kwargs={'pk': activity.pk}))
         else:
             return self.render_to_response(self.get_context_data(form=form))
+
+
+def ActivityLike(request, pk):
+    activity = get_object_or_404(Activity, id=request.POST.get('activity_id'))
+    if activity.likes.filter(id=request.user.id).exists():
+        activity.likes.remove(request.user)
+    else:
+        activity.likes.add(request.user)
+
+    return HttpResponseRedirect(reverse('view_activity_details', args=[str(pk)]))

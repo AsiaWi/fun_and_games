@@ -27,12 +27,25 @@
                         <div class="col">
                             Commented:
                             <br />
-                            0
+                            {{ activity.comment.count }}
                         </div>
                         <div class="col">
                             Liked:
                             <br />
-                            {{ activity.likes }}0
+                            {% if user.is_authenticated %}
+                            <form action="{% url 'like' object.id %}" method="POST">
+                                {% csrf_token %}
+                            
+                                {% if activity_liked %}
+                                <button type="submit" name="activity_id" value="{{object.id}}" class="btn btn-info">Unlike</button>
+                                {% else %}
+                                <button type="submit" name="activity_id" value="{{object.id}}" class="btn btn-info">Like</button>
+                                {% endif %}
+                              </form>
+                            {% else %}
+                              <a class="btn btn-outline-info" href="{% url 'account_login' %}?next={{ request.get_full_path }}">Log in to like this article!</a><br>
+                            {% endif %}
+                            <strong class="text-secondary">{{ total_num_of_likes }} Like{{ total_num_of_likes|pluralize }}</strong>
                         </div>
                     </div>
                 </div>

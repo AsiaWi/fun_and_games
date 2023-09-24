@@ -25,7 +25,7 @@ class Activity(models.Model):
     content = QuillField(blank=False)
     link = models.CharField(max_length=200, default=None, blank=True)
     privacy = models.CharField(max_length=10, choices=PRIVACY, default='private')
-    likes = models.ManyToManyField(User, default=None, blank=True)
+    likes = models.ManyToManyField(User, default=None, blank=True, related_name='like')
     
     class Meta:
         ordering = ['-date_created']
@@ -33,6 +33,10 @@ class Activity(models.Model):
     def __str__(self):
         return self.title
 
+    def total_num_of_likes(self):
+        return self.likes.count()
+
+        
 class Comment(models.Model):
     activity = models.ForeignKey(Activity, on_delete=models.CASCADE, related_name='comment')
     comment_author = models.ForeignKey(User, on_delete=models.CASCADE)
