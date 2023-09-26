@@ -19,33 +19,38 @@
                         {{ activity.excerpt}}
                     </h2>
                     <div class="row align-items-end">
-                        <div class="col">
+                        <div class="col-4">
                             Posted by:
                             <br />
                             {{ activity.author }}
                         </div>
-                        <div class="col">
+                        <div class="col-4">
                             Commented:
                             <br />
                             {{ activity.comment.count }}
                         </div>
-                        <div class="col">
+                        <div class="col-2 p-0 text-end">
                             Liked:
                             <br />
                             {% if user.is_authenticated %}
                             <form action="{% url 'like' object.id %}" method="POST">
                                 {% csrf_token %}
-                            
+
                                 {% if activity_liked %}
-                                <button type="submit" name="activity_id" value="{{object.id}}" class="btn btn-info">Unlike</button>
+                                <button type="submit" name="activity_id" value="{{object.id}}"
+                                    style="border: 0 !important;"><i class="fa-solid fa-heart"></i></button>
                                 {% else %}
-                                <button type="submit" name="activity_id" value="{{object.id}}" class="btn btn-info">Like</button>
+                                <button type="submit" name="activity_id" value="{{object.id}}"
+                                    style="border: 0 !important;"><i class="fa-regular fa-heart"></i></button>
                                 {% endif %}
-                              </form>
+                            </form>
                             {% else %}
-                              <a class="btn btn-outline-info" href="{% url 'account_login' %}?next={{ request.get_full_path }}">Log in to like this article!</a><br>
+                            <a href="{% url 'account_login' %}?next={{ request.get_full_path }}"><i
+                                    class="fa-regular fa-heart"></i></a><br>
                             {% endif %}
-                            <strong class="text-secondary">{{ total_num_of_likes }} Like{{ total_num_of_likes|pluralize }}</strong>
+                        </div>
+                        <div class="col-2 p-0 text-start">
+                            <strong class="text-secondary">{{ total_num_of_likes }}</strong>
                         </div>
                     </div>
                 </div>
@@ -68,7 +73,8 @@
                 {% else %}
                 <div class="bg-transparent mt-4">
                     Login to leave a comment:
-                    <a class="btn btn-outline-secondary btn-sm" href="{% url 'account_login' %}?next={{ request.get_full_path }}">SIGN-IN</a>
+                    <a class="btn btn-outline-secondary btn-sm"
+                        href="{% url 'account_login' %}?next={{ request.get_full_path }}">SIGN-IN</a>
                 </div>
                 {% endif %}
                 <div class="bg-light mt-4">
@@ -80,7 +86,8 @@
                             <span>{{ comment.comment_author.username }}</span>
                             <span>{{ comment.created_date }}</span>
                             <p>{{ comment.comment_content }}</p>
-                        <hr></hr>
+                            <hr>
+                            </hr>
                         </div>
                         {% empty %}
                         <p>No comments yet.</p>
@@ -88,18 +95,18 @@
                     </div>
                 </div>
             </div>
-        
-        {% if request.user == activity.author %}
-        <div class="d-grid gap-2 col-4 mx-auto">
-            <div>
-                <a href="{% url 'edit_activity' activity_id=activity.id %}"><button class="btn btn-success btn-custom"
-                        type="button">Edit</button></a>
-                <a href="{% url 'activity_confirm_delete' activity_id=activity.id %}"><button
-                        class="btn btn-danger btn-custom" type="button">Delete</button></a>
+
+            {% if request.user == activity.author %}
+            <div class="d-grid gap-2 col-4 mx-auto">
+                <div>
+                    <a href="{% url 'edit_activity' activity_id=activity.id %}"><button
+                            class="btn btn-success btn-custom" type="button">Edit</button></a>
+                    <a href="{% url 'activity_confirm_delete' activity_id=activity.id %}"><button
+                            class="btn btn-danger btn-custom" type="button">Delete</button></a>
+                </div>
             </div>
+            {% endif %}
         </div>
-        {% endif %}
-    </div>
     </div>
 
 
