@@ -19,7 +19,7 @@
     </div>
   </div>
 </div>
-<div class="container-fluid position-styling ">
+<div class="container-fluid position-styling " id="view_posts">
   <div class="row">
     {% for activity in activities  %}
     {% if activity.privacy == 'public' %}
@@ -48,7 +48,7 @@
     <ul class="pagination justify-content-center">
       {% if page_obj.has_previous %}
         <li class="page-item">
-          <a class="page-link" id="custom-pagination"  href="?page=1" tabindex="-1">First</a>
+          <a class="page-link" id="custom-pagination"  href="?page=1 #view_posts" tabindex="-1">First</a>
         </li>
         <li class="page-item">
           <a class="page-link" id="custom-pagination"  href="?page={{ activities.previous_page_number }}">Previous</a>
@@ -57,13 +57,13 @@
   
       {% for page in page_obj.paginator.page_range %}
         <li class="page-item{% if page == activities.number %} active{% endif %}">
-          <a class="page-link" id="custom-pagination"  href="?page={{ page }}">{{ page }}</a>
+          <a class="page-link" id="custom-pagination"  href="?page={{ page }} #view_posts">{{ page }}</a>
         </li>
       {% endfor %}
   
       {% if page_obj.has_next %}
         <li class="page-item">
-          <a class="page-link" id="custom-pagination" href="?page={{ activities.next_page_number }}">Next</a>
+          <a class="page-link" id="custom-pagination" href="?page={{ activities.next_page_number}} ">Next</a>
         </li>
         <li class="page-item">
           <a class="page-link" id="custom-pagination"  href="?page={{ activities.paginator.num_pages }}">Last</a>
