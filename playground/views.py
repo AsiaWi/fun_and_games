@@ -3,9 +3,12 @@ from django.views.generic import TemplateView, CreateView, ListView, DetailView,
 from .models import Activity, Comment
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from .forms import ActivityForm, CommentForm
+from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.shortcuts import get_object_or_404
+# from django.contrib.auth.decorators import login_required, user_passes_test // like function
+# from django.http import HttpResponseForbidden   / like function
 
 
 # Create your views here.
@@ -30,8 +33,8 @@ class AddActivity(LoginRequiredMixin, CreateView):
 
     def form_valid(self, form):
         form.instance.author = self.request.user
+        messages.add_message(self.request, messages.SUCCESS, 'Your post has been saved!')
         return super(AddActivity, self).form_valid(form)
-
 
 class DeleteActivity(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
@@ -44,7 +47,10 @@ class DeleteActivity(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     def get_object(self, queryset=None):
         activity_id = self.kwargs.get('activity_id')
         return Activity.objects.get(pk=activity_id)
-
+        
+    def delete(self, request, *args, **kwargs):
+        messages.success(self.request, "Post deleted successfully!")
+        return super().delete(request, *args, **kwargs)
 
 class UpdateActivity(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
@@ -53,12 +59,17 @@ class UpdateActivity(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     form_class = ActivityForm
     template_name = 'playground/edit_activity.html'
 
+    def test_func(self):
+        return self.request.user == self.get_object().author
+
     def get_object(self, queryset=None):
         activity_id = self.kwargs.get('activity_id')
         return Activity.objects.get(pk=activity_id)
 
-    def test_func(self):
-        return self.request.user == self.get_object().author
+    def form_valid(self, form):
+        # success message
+        messages.success(self.request, 'Post updates saved!')
+        return super().form_valid(form)
 
 
 class DisplayActivityList(ListView):
@@ -103,11 +114,13 @@ class DisplayActivityDetails(DetailView):
             comment.comment_author = self.request.user
             comment.activity = activity
             comment.save()
+            messages.add_message(request, messages.SUCCESS, 'Your comment has been posted!')
             return HttpResponseRedirect(reverse('view_activity_details', kwargs={'pk': activity.pk}))
         else:
             return self.render_to_response(self.get_context_data(form=form))
 
-
+# @login_required // like function
+# @user_passes_test(lambda user: user.is_authenticated, login_url=None)// like function
 def ActivityLike(request, pk):
     activity = get_object_or_404(Activity, id=request.POST.get('activity_id'))
     if activity.likes.filter(id=request.user.id).exists():

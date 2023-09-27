@@ -45,9 +45,12 @@
   <div class="container-fluid">
     <div class="row">
       {% for message in messages %}
-      <div class="alert  alert-dismissible fade show" role="alert" id="alert">
-        <strong>{{message.tags}}! </strong>{{message | safe }}
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      <div class="container-fluid p-0">
+        <div class="alert {{ message.tags }} alert-dismissible" role="alert" id="alert" >
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </button>
+          {{ message }}
+        </div>
       </div>
       {% endfor %}
     </div>

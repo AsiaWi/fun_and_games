@@ -1,10 +1,7 @@
 header {
   margin-bottom: 0;
 }
-/* alert messages */
-#alert {
-  background-color: aquamarine;
-}
+
 /* following code for sticky footer taken from https://css-tricks.com/couple-takes-sticky-footer/ */
 html, body {
     height: 100%;

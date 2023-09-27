@@ -9,9 +9,9 @@
             <p class="lead">Are you sure you want to delete the post?</p>
             <form method="POST">
                 {% csrf_token %}
-                <input type="submit" class="btn btn-primary" value="YES, CONTINUE">
+                <input type="submit" class="btn btn-success mb-2" value="YES, CONTINUE">
             </form>
-            <a href="{% url 'profile_wall' %}" class="btn btn-primary" >NO, GO BACK TO MY PROFILE</a>
+            <a href="{% url 'profile_wall' %}" class="btn btn-danger" >NO, GO BACK TO MY PROFILE</a>
         </div>
     </div>
 </div>

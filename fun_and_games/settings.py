@@ -104,13 +104,13 @@ LOGOUT_REDIRECT_URL = '/'
 WSGI_APPLICATION = 'fun_and_games.wsgi.application'
 
 # messages for users
-MESSAGE_TAGS ={
-    messages.DEBUG: 'debug',
-    messages.INFO: 'info',
-    messages.SUCCESS: 'success',
-    messages.WARNING: 'warning',
-    messages.ERROR: 'error',
-}
+MESSAGE_TAGS = {
+        messages.DEBUG: 'alert-secondary',
+        messages.INFO: 'alert-info',
+        messages.SUCCESS: 'alert-success',
+        messages.WARNING: 'alert-warning',
+        messages.ERROR: 'alert-danger',
+ }
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
