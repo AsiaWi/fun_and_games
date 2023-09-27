@@ -1,6 +1,5 @@
 {% load static %}
 <header>
-  <nav>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
         <a class="navbar-brand" href="{% url 'index' %}">Fun&Games</a>
@@ -34,9 +33,11 @@
 
           </ul>
         </div>
+        {% if user.is_authenticated %}
+        <p class="p-0 mb-1">Hi {{request.user.username}}!</p>
+        {% endif %}
       </div>
     </nav>
-  </nav>
   <div class="container-fluid">
     <div class="row">
       {% for message in messages %}

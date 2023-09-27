@@ -24,10 +24,12 @@
                             <br />
                             {{ activity.author }}
                         </div>
-                        <div class="col-4">
+                        <div class="col-4" id="hover">
+                            <a href="#comments-section" class="comments-section">
                             Commented:
                             <br />
                             {{ activity.comment.count }}
+                        </a>
                         </div>
                         <div class="col-2 p-0 text-end">
                             Liked:
@@ -61,7 +63,7 @@
                     {{ activity.content.html|safe }}
                 </div>
                 {% if user.is_authenticated %}
-                <div class="container">
+                <div class="container" id="comments-section">
                     <form method="POST">
                         {% csrf_token %}
                         {{ add_comment_form | crispy }}
@@ -83,7 +85,7 @@
                     <div class="comments">
                         {% for comment in comments %}
                         <div class="comment">
-                            <span>{{ comment.comment_author.username }}</span>
+                            <span>{{ comment.comment_author.username }} || </span>
                             <span>{{ comment.created_date }}</span>
                             <p>{{ comment.comment_content }}</p>
                             <hr>

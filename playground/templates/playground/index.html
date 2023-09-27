@@ -33,11 +33,47 @@
           <h1 class="card-title">{{ activity.title }}</h1>
           <p class="card-text">{{ activity.excerpt }}</p>
           <a href="{% url 'view_activity_details' activity.pk %}" class="btn btn-primary">View post</a>
+          {% if activity.date_updated %}
+          <span class="font-weight-light">Last updated: {{ activity.date_updated }}<i class="fa-solid fa-check"></i></span>
+          {% endif %}
         </div>
       </div>
     </div>
     {% endif %}
     {% endfor %}
   </div>
+  <!-- Pagination -->
+  {% if is_paginated %}
+  <nav aria-label="Page navigation" class="justify-content-center pagination">
+    <ul class="pagination justify-content-center">
+      {% if page_obj.has_previous %}
+        <li class="page-item">
+          <a class="page-link" id="custom-pagination"  href="?page=1" tabindex="-1">First</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" id="custom-pagination"  href="?page={{ activities.previous_page_number }}">Previous</a>
+        </li>
+      {% endif %}
+  
+      {% for page in page_obj.paginator.page_range %}
+        <li class="page-item{% if page == activities.number %} active{% endif %}">
+          <a class="page-link" id="custom-pagination"  href="?page={{ page }}">{{ page }}</a>
+        </li>
+      {% endfor %}
+  
+      {% if page_obj.has_next %}
+        <li class="page-item">
+          <a class="page-link" id="custom-pagination" href="?page={{ activities.next_page_number }}">Next</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" id="custom-pagination"  href="?page={{ activities.paginator.num_pages }}">Last</a>
+        </li>
+      {% endif %}
+    </ul>
+  </nav>
+  {% endif %}
+  
 </div>
+
+
 {% endblock %}

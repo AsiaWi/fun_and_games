@@ -3,7 +3,6 @@ from django.views.generic import TemplateView, CreateView, ListView, DetailView,
 from .models import Activity, Comment
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from .forms import ActivityForm, CommentForm
-from django.urls import reverse_lazy
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.shortcuts import get_object_or_404
@@ -62,7 +61,7 @@ class UpdateActivity(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 class DisplayActivityList(ListView):
     model = Activity
     template_name = 'playground/index.html'
-    #paginate_by = 3
+    paginate_by = 3
     context_object_name = 'activities'
 
 
