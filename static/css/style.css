@@ -1,6 +1,10 @@
 header {
   margin-bottom: 0;
 }
+
+#user-name {
+  width: 10%;
+}
 /* profile wall page */
 
 #banner-custom {
@@ -131,6 +135,7 @@ html, body {
      #overlay > p {
       padding: 10px;
      }
+     
     }
     
    /* for small to medium screen sizes from 670px and down */
