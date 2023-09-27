@@ -10,6 +10,9 @@ from django.shortcuts import get_object_or_404
 
 # Create your views here.
 
+class IndexView(TemplateView):
+    template_name = 'playground/index.html'
+
 
 class AddActivity(LoginRequiredMixin, CreateView):
     '''
@@ -60,7 +63,7 @@ class UpdateActivity(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
 class DisplayActivityList(ListView):
     model = Activity
-    template_name = 'playground/index.html'
+    template_name = 'playground/activities.html'
     paginate_by = 3
     context_object_name = 'activities'
 
@@ -69,6 +72,7 @@ class DisplayProfileWall(ListView):
     model = Activity
     template_name = 'playground/profile_wall.html'
     context_object_name = 'activities'
+    paginate_by = 3
 
 
 class DisplayActivityDetails(DetailView):

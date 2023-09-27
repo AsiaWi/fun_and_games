@@ -9,7 +9,7 @@
               <a class="nav-link active" aria-current="page" href="{% url 'index' %}">HOME</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#view_posts">ACTIVITIES</a>
+              <a class="nav-link active" aria-current="page" href="{% url 'activities' %}">ACTIVITIES</a>
             </li>
             {% if user.is_authenticated %}
             <li class="nav-item dropdown">
@@ -41,6 +41,7 @@
         {% endif %}
       </div>
     </nav>
+    <!-- alert messages for user -->
   <div class="container-fluid">
     <div class="row">
       {% for message in messages %}

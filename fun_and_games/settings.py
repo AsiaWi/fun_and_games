@@ -27,11 +27,11 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY')
-RICHTEXTFIELD_KEY=os.environ.get('RICHTEXTFIELD_KEY')
+RICHTEXTFIELD_KEY = os.environ.get('RICHTEXTFIELD_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-asiawi-funandgames-0ypziizicl3.ws-eu104.gitpod.io', 'fun-and-games-a99303d46c12.herokuapp.com']
+ALLOWED_HOSTS = ['8000-asiawi-funandgames-0ypziizicl3.ws-eu104.gitpod.io', 'fun-and-games-a99303d46c12.herokuapp.com', '8000-asiawi-funandgames-0ypziizicl3.ws-eu105.gitpod.io']
 
 
 # Application definition

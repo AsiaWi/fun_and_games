@@ -3,77 +3,19 @@
 
 {% block content %}
 
-
 <div class="container-fluid p-0">
-  <div class="hero-container">
+  <div class="hero-container col-12 p-0">
     <img src="/static/media/hero_img.webp" alt="a carousel photo with people having fun" class="hero-image">
-    <div class="overlay">
+    <div class="overlay col-12 p-0" id="overlay">
       <h1 class="display-4">Fun&Games</h1>
       <p>Life is too short to be boring, so why not embrace your inner weirdness and share your quirkiest activities
         with us?</p>
       <p class="inactive">From the extraordinary to the everyday, we celebrate all things fun and unique. Sign up now
         and be a part of the adventure!</p>
         {% if not user.is_authenticated %}
-      <a href="{% url 'account_signup' %}" class="btn btn-primary">Join the fun!</a>
+      <a href="{% url 'account_signup' %}" class="btn btn-primary mb-2">Join the fun!</a>
       {% endif %}
     </div>
   </div>
 </div>
-<div class="container-fluid position-styling " id="view_posts">
-  <div class="row">
-    {% for activity in activities  %}
-    {% if activity.privacy == 'public' %}
-    <div class="col-lg-4 col-md-6 col-12 mb-4">
-      <div class="card" id="card">
-        <img id='card-img' src="{{ activity.featured_image.url }}" class="card-img-top" alt="{{ activity.image_alt }}">
-        <div class="overlay-text">
-          <span class="card-text text-muted">Posted by {{ activity.author}}|| {{ activity.date_created.date}}</span>
-        </div>
-        <div class="card-body">
-          <h1 class="card-title">{{ activity.title }}</h1>
-          <p class="card-text">{{ activity.excerpt }}</p>
-          <a href="{% url 'view_activity_details' activity.pk %}" class="btn btn-primary">View post</a>
-          {% if activity.date_updated %}
-          <span class="font-weight-light">Last updated: {{ activity.date_updated }}<i class="fa-solid fa-check"></i></span>
-          {% endif %}
-        </div>
-      </div>
-    </div>
-    {% endif %}
-    {% endfor %}
-  </div>
-  <!-- Pagination -->
-  {% if is_paginated %}
-  <nav aria-label="Page navigation" class="justify-content-center pagination">
-    <ul class="pagination justify-content-center">
-      {% if page_obj.has_previous %}
-        <li class="page-item">
-          <a class="page-link" id="custom-pagination"  href="?page=1 #view_posts" tabindex="-1">First</a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" id="custom-pagination"  href="?page={{ activities.previous_page_number }}">Previous</a>
-        </li>
-      {% endif %}
-  
-      {% for page in page_obj.paginator.page_range %}
-        <li class="page-item{% if page == activities.number %} active{% endif %}">
-          <a class="page-link" id="custom-pagination"  href="?page={{ page }} #view_posts">{{ page }}</a>
-        </li>
-      {% endfor %}
-  
-      {% if page_obj.has_next %}
-        <li class="page-item">
-          <a class="page-link" id="custom-pagination" href="?page={{ activities.next_page_number}} ">Next</a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" id="custom-pagination"  href="?page={{ activities.paginator.num_pages }}">Last</a>
-        </li>
-      {% endif %}
-    </ul>
-  </nav>
-  {% endif %}
-  
-</div>
-
-
 {% endblock %}
