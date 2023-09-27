@@ -1,7 +1,13 @@
 header {
   margin-bottom: 0;
 }
+/* profile wall page */
 
+#banner-custom {
+  border: inset;
+  border-color: rgb(255, 255, 255);
+  background-color: rgba(72, 72, 251, 0.5) ;
+}
 /* following code for sticky footer taken from https://css-tricks.com/couple-takes-sticky-footer/ */
 html, body {
     height: 100%;
@@ -70,10 +76,6 @@ html, body {
 
    }
    .overlay {
-    /* position: absolute;
-    bottom: 0%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
     background-color: rgba(245, 237, 237, 0.5);
     border-style: outset;
     border-color: rgba(245, 237, 237, 0.7);
