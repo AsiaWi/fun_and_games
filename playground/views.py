@@ -52,6 +52,7 @@ class DeleteActivity(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         messages.success(self.request, "Post deleted successfully!")
         return super().delete(request, *args, **kwargs)
 
+
 class UpdateActivity(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
     model = Activity

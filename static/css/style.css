@@ -151,3 +151,9 @@ html, body {
     background-color: aqua;
 
    }
+
+   /* view activity details page styling */
+   #content-custom {
+    height: fit-content;
+    text-align: center;
+   }

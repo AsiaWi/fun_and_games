@@ -60,7 +60,14 @@
                     <img src="{{ activity.featured_image.url }}" class="img-fluid" alt=" {{activity.image_alt}}">
                 </div>
                 <div class="bg-light mt-4">
+                    <div class="container" id="content-custom">
                     {{ activity.content.html|safe }}
+                </div>
+                <div class="container">
+                {% if activity.link %}
+                    <span><a href="{{activity.link}}">{{activity.link}}</a></span>
+                    {% endif %}
+                </div>
                 </div>
                 {% if user.is_authenticated %}
                 <div class="container" id="comments-section">
