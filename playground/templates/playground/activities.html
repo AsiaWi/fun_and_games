@@ -32,7 +32,7 @@
       <ul class="pagination justify-content-center">
         {% if page_obj.has_previous %}
           <li class="page-item">
-            <a class="page-link" id="custom-pagination"  href="?page=1 #view_posts" tabindex="-1">First</a>
+            <a class="page-link" id="custom-pagination"  href="?page=1" tabindex="-1">First</a>
           </li>
           <li class="page-item">
             <a class="page-link" id="custom-pagination"  href="?page={{ activities.previous_page_number }}">Previous</a>
@@ -40,8 +40,8 @@
         {% endif %}
     
         {% for page in page_obj.paginator.page_range %}
-          <li class="page-item{% if page == activities.number %} active{% endif %}">
-            <a class="page-link" id="custom-pagination"  href="?page={{ page }} #view_posts">{{ page }}</a>
+          <li class="page-item{% if page == page_obj.number %} active {% endif %}">
+            <a class="page-link" id="custom-pagination"  href="?page={{ page }}">{{ page }}</a>
           </li>
         {% endfor %}
     

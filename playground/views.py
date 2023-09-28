@@ -80,11 +80,12 @@ class DisplayActivityList(ListView):
     context_object_name = 'activities'
 
 
-class DisplayProfileWall(ListView):
+class DisplayProfileWall(LoginRequiredMixin, ListView):
     model = Activity
     template_name = 'playground/profile_wall.html'
     context_object_name = 'activities'
     paginate_by = 3
+
 
 
 class DisplayActivityDetails(DetailView):
