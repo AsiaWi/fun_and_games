@@ -1,93 +1,109 @@
+/* page layout */
+/* following code for sticky footer taken from https://css-tricks.com/couple-takes-sticky-footer/ */
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+footer {
+  flex-shrink: 0;
+}
+
+footer a {
+  font-size: 250%;
+  color: black;
+  padding: 15px;
+}
+
+footer ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  list-style-type: none;
+}
+
 header {
   margin-bottom: 0;
 }
 
+/* user-name shown within nav when user logged in */
 #user-name {
   width: 10%;
 }
-/* profile wall page */
 
+/* index styling hero image */
+.hero-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  animation: zoom-in 2s;
+  overflow: hidden;
+}
+
+/* text over hero img */
+.overlay {
+  background-color: rgba(245, 237, 237, 0.5);
+  border-style: outset;
+  border-color: rgba(245, 237, 237, 0.7);
+  padding: 20px;
+  text-align: center;
+  height:fit-content;
+}
+
+/* list view styling activities.html */
+div.card {
+  border-radius: 25px;
+  border-color: black;
+  height: 100%;
+}
+
+[id*="card-img"]{
+  margin: 15px 0 2px 0;
+}
+.btn-custom {
+  height: 40px;
+  width: 50%;
+  margin: 5%;
+}
+
+/* pagination */
+a.custom-pagination {
+  color: black;
+}
+
+
+
+
+
+
+
+
+/* view_activity_details.html styling */
+  .word-break {
+    word-wrap: break-word;
+  }
+
+  #content-custom > p {
+    word-wrap: break-word;
+  }
+  /* profile wall page */
 #banner-custom {
   border: inset;
   border-color: rgb(255, 255, 255);
   background-color:rgb(125, 212, 255, 0.2);
 }
-/* following code for sticky footer taken from https://css-tricks.com/couple-takes-sticky-footer/ */
-html, body {
-    height: 100%;
-  }
-  body {
-    display: flex;
-    flex-direction: column;
-  }
-  main {
-    flex: 1 0 auto;
-  }
-  footer {
-    flex-shrink: 0;
-  }
-
-  /* styling */
-  footer a {
-    font-size: 250%;
-    color: black;
-    padding: 15px;
-    
-
-  }
-  footer ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    list-style-type: none;
-  }
-  /* list view styling */
-
-  #card-img{
-    border-radius: 25px;
-  }
-
-   #card {
-     position: relative;
-     border-radius: 20px;
-   }
-    
-   .overlay-text {
-    position: absolute;
-    top: 50%;
-    background-color:white;
-    color: white;
-
-   }
-
-   .btn-custom {
-    height: 40px;
-    width: 50%;
-    margin: 5%;
-   }
-
-   /* profile_wall and index styling hero image */
-   .hero-container {
-    width: 100%;
-    overflow: hidden;
-   }
-   .hero-image {
-    width: 100%;
-    height: auto;
-    animation: zoom-in 2s;
-    overflow: hidden;
-    
-
-   }
-   .overlay {
-    background-color: rgba(245, 237, 237, 0.5);
-    border-style: outset;
-    border-color: rgba(245, 237, 237, 0.7);
-    padding: 20px;
-    text-align: center;
-    height:fit-content;
-   }
-
 
    @keyframes zoom-in {
     from {
@@ -97,21 +113,12 @@ html, body {
       transform: scale(1.0);
     }
    }
-/* div holding list view */
-   .position-styling {
-    background-color: white;
-   }
 
-#custom-pagination {
-  color: black;
-}
 
-#custom-pagination:active {
-  background-color: gray;
-}
+
    /* for small to medium screen sizes from 500px wide and down */
 @media screen and (max-width: 500px) {
-  .overlay-text {
+  #overlay-text {
     top: 40%;
   }
 }
@@ -152,7 +159,4 @@ html, body {
 
    }
 
-   /* view activity details page styling */
-   #content-custom {
-
-  
+   
