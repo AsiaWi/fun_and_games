@@ -2,17 +2,17 @@
 {% load static %}
 
 {% block content %}
-
+<!-- Hero img -->
 <div class="container-fluid p-0">
   <div class="hero-container col-12 p-0">
     <img src="/static/media/hero_img.webp" alt="a carousel photo with people having fun" class="hero-image">
-    <div class="overlay col-12 p-0" id="overlay">
+    <div class="col-12 p-0" id="overlay">
       <h1 class="display-4">Fun&Games</h1>
       <p>Life is too short to be boring, so why not embrace your inner weirdness and share your quirkiest activities
         with us?</p>
       <p>From the extraordinary to the everyday, we celebrate all things fun and unique. Sign up now
         and be a part of the adventure!</p>
-        {% if not user.is_authenticated %}
+      {% if not user.is_authenticated %}
       <a href="{% url 'account_signup' %}" class="btn btn-primary mb-2">Join the fun!</a>
       {% endif %}
     </div>

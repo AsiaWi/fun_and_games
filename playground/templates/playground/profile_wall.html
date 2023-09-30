@@ -3,76 +3,70 @@
 {% load static %}
 
 {% block content %}
-<!-- Page message -->
+
+<!-- Page message/banner -->
 <div class="container-fluid p-0">
-  <div class="overlay" id="banner-custom">
+  <div id="banner-custom">
     <p><strong>This page is just for you! You can see your public and private posts here</strong></p>
   </div>
 </div>
-<!-- card container -->
-<div class="container-fluid position-styling ">
-  <div class="row">
+<!-- card container/list view/user's own posts only -->
+<div class="container-fluid">
+  <div class="row mb-4">
     {% for activity in activities  %}
     {% if request.user == activity.author %}
     <div class="col-lg-4 col-md-6 col-12 mb-4">
-      <div class="card" id="card">
-        <img id='card-img' src="{{ activity.featured_image.url }}" class="card-img-top" alt="{{ activity.image_alt }}">
-        <div class="overlay-text">
-          <span class="card-text text-muted">Last updated: {{ activity.date_updated.date}} || {{activity.privacy}}
-          </span>
-        </div>
+      <div class="card mt-4">
+        <img src="{{ activity.featured_image.url }}" id='card-img-{{activity.id}}' class="card-img-top"
+          alt="{{activity.image_alt}}">
+        <span class="card-text text-muted" id="overlay-text-{{activity.id}}">Last updated:
+          {{ activity.date_updated.date}} || {{activity.privacy | upper}}</span>
         <div class="card-body">
-          <h1 class="card-title">{{ activity.title }}</h1>
-          <p class="card-text">{{ activity.excerpt }}</p>
-          <a href="{% url 'view_activity_details' activity.id %}" class="btn btn-primary">View post</a>
-        </div>
-        </div>
-        {% endif %}
-        {% empty %}
-        <div class="col-12">
-          <p>You haven't added any posts yet.</p>
+          <h1 class="card-title">{{ activity.title | truncatechars:30 }}</h1>
+          <p class="card-text">{{ activity.excerpt | truncatechars:80 }}</p>
+          <a href="{% url 'view_activity_details' activity.pk %}" class="btn btn-primary">View
+            post</a>
+          {% if activity.date_updated %}
+          <span class="font-weight-light">Last updated: {{ activity.date_updated }}<i
+              class="fa-solid fa-check"></i></span>
+          {% endif %}
         </div>
       </div>
     </div>
+    {% endif %}
     {% endfor %}
   </div>
 </div>
 
-
-
-<!-- Page pagination -->
+<!-- Pagination / no pagination displayed if user has no posts -->
+{% if activities.author|length > 0 %}
 {% if is_paginated %}
 <nav aria-label="Page navigation" class="justify-content-center pagination">
   <ul class="pagination justify-content-center">
     {% if page_obj.has_previous %}
     <li class="page-item">
-      <a class="page-link" href="?page=1" tabindex="-1">First</a>
+      <a class="page-link custom-pagination" href="?page=1" tabindex="-1">First</a>
     </li>
     <li class="page-item">
-      <a class="page-link" href="?page={{ activities.previous_page_number }}">Previous</a>
+      <a class="page-link custom-pagination" href="?page={{ activities.previous_page_number }}">Previous</a>
     </li>
     {% endif %}
-
     {% for page in page_obj.paginator.page_range %}
-    <li class="page-item{% if page == activities.number %} active{% endif %}">
-      <a class="page-link" href="?page={{ page }}">{{ page }}</a>
+    <li class="page-item{% if page == page_obj.number %} active {% endif %}">
+      <a class="page-link custom-pagination" href="?page={{ page }}">{{ page }}</a>
     </li>
     {% endfor %}
-
     {% if page_obj.has_next %}
     <li class="page-item">
-      <a class="page-link" href="?page={{ activities.next_page_number }}">Next</a>
+      <a class="page-link custom-pagination" href="?page={{ activities.next_page_number}} ">Next</a>
     </li>
     <li class="page-item">
-      <a class="page-link" href="?page={{ activities.paginator.num_pages }}">Last</a>
+      <a class="page-link custom-pagination" href="?page={{ activities.paginator.num_pages }}">Last</a>
     </li>
     {% endif %}
   </ul>
 </nav>
 {% endif %}
-</div>
-
-
-
+{% endif %}
 
 {% endblock %}

@@ -4,120 +4,146 @@
 {% block content %}
 
 {% load crispy_forms_tags %}
+<!-- Post detail view -->
 <div class="container mt-4 text-center">
     <div class="row">
+        <!-- The if statement controlling layout for post author/any user to fit edit/delete functions at top of the page -->
         {% if request.user == activity.author %}
         <div class="col-md-8 mx-auto">
             {% else %}
             <div class="col-md-6 mx-auto">
                 {% endif %}
+                <!-- Post title -->
                 <div class="bg-light">
                     <h1 class="word-break">{{activity.title}}</h1>
                 </div>
+                <!-- Post excerpt -->
                 <div class="bg-light mt-4">
                     <h2 class="word-break">
                         {{ activity.excerpt}}
                     </h2>
                     <div class="row align-items-end">
+                        <!-- Post author -->
                         <div class="col-4">
                             Posted by:
-                            <br />
+                            <br>
                             {{ activity.author }}
                         </div>
-                        <div class="col-4" id="hover">
-                            <a href="#comments-section" class="comments-section">
-                            Commented:
-                            <br />
-                            {{ activity.comment.count }}
-                        </a>
+                        <!-- Comments number incl. link taking user down the page to view comments -->
+                        <div class="col-4" id="hover-comment">
+                            <a href="#comments-section" class="comments-section-link">
+                                Commented:
+                                <br>
+                                {{ activity.comment.count }}
+                            </a>
                         </div>
+                        <!-- Like column -->
+                        <!-- code used: https://dev.to/radualexandrub/how-to-add-like-unlike-button-to-your-django-blog-5gkg -->
                         <div class="col-2 p-0 text-end">
                             Liked:
-                            <br />
+                            <br>
+                            <!-- if user is authenticated 'like' icon will display/ user can click to like/unlike -->
                             {% if user.is_authenticated %}
                             <form action="{% url 'like' object.id %}" method="POST">
                                 {% csrf_token %}
-
+                                <!-- solid heart icon if user liked post -->
                                 {% if activity_liked %}
                                 <button type="submit" name="activity_id" value="{{object.id}}"
                                     style="border: 0 !important;"><i class="fa-solid fa-heart"></i></button>
                                 {% else %}
+                                <!-- hollow heart icon if user didn't like the post yet -->
                                 <button type="submit" name="activity_id" value="{{object.id}}"
                                     style="border: 0 !important;"><i class="fa-regular fa-heart"></i></button>
                                 {% endif %}
                             </form>
                             {% else %}
+                            <!-- if user not authenticated- hollow icon will link to login page on click /
+                            once logged in -user taken back to the post-->
                             <a href="{% url 'account_login' %}?next={{ request.get_full_path }}"><i
                                     class="fa-regular fa-heart"></i></a><br>
                             {% endif %}
                         </div>
+                        <!-- a number of likes against the post -->
                         <div class="col-2 p-0 text-start">
                             <strong class="text-secondary">{{ total_num_of_likes }}</strong>
                         </div>
                     </div>
                 </div>
+                <!-- Post's image displayed -->
                 <div class="mt-4">
                     <img src="{{ activity.featured_image.url }}" class="img-fluid" alt=" {{activity.image_alt}}">
                 </div>
+                <!-- Post content/description -->
                 <div class="bg-light mt-4">
                     <div class="container" id="content-custom">
-                    {{ activity.content.html|safe }}
+                        {{ activity.content.html|safe }}
                     </div>
                 </div>
+                <!-- A link provided by author will display IF provided -->
                 <div class="container">
-                {% if activity.link %}
+                    {% if activity.link %}
                     <span><a href="{{activity.link}}">{{activity.link}}</a></span>
                     {% endif %}
                 </div>
-                </div>
-                {% if user.is_authenticated %}
-                <div class="container" id="comments-section">
-                    <form method="POST">
-                        {% csrf_token %}
-                        {{ add_comment_form | crispy }}
+                <!-- COMMENT SECTION-->
+                <!-- this div allows linking comments number at the top with click regardless of auth state -->
+                <div id="comments-section">
+                    <!-- authenticated user/ form displayed to leave a comment -->
+                    {% if user.is_authenticated %}
+                    <div class="container">
+                        <form method="POST">
+                            {% csrf_token %}
+                            {{ add_comment_form | crispy }}
+                            <div>
+                                <button type="submit" class="btn btn-dark mt-2">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                    {% else %}
+                    <!-- unauthenticated user / login button -->
+                    <div class="bg-transparent mt-4">
+                        Login to leave a comment:
+                        <a class="btn btn-outline-secondary btn-sm"
+                            href="{% url 'account_login' %}?next={{ request.get_full_path }}">SIGN-IN</a>
+                    </div>
+                    {% endif %}
+                    <!-- Comments displayed to all users -->
+                    <div class="bg-light mt-4">
+                        <h3>Comments:</h3>
+                        <br>
                         <div>
-                            <button type="submit" class="btn btn-dark">Submit</button>
+                            {% for comment in comments %}
+                            <div>
+                                <span>{{ comment.comment_author.username }} || </span>
+                                <span>{{ comment.created_date }}</span>
+                                <p>{{ comment.comment_content }}</p>
+                                <br>
+                            </div>
+                            <!-- if post has no comments/ short info message -->
+                            {% empty %}
+                            <p>No comments yet.</p>
+                            {% endfor %}
+
                         </div>
-                    </form>
-                </div>
-                {% else %}
-                <div class="bg-transparent mt-4">
-                    Login to leave a comment:
-                    <a class="btn btn-outline-secondary btn-sm"
-                        href="{% url 'account_login' %}?next={{ request.get_full_path }}">SIGN-IN</a>
-                </div>
-                {% endif %}
-                <div class="bg-light mt-4">
-                    <h3>Comments:</h3>
-                    <hr>
-                    <div class="comments">
-                        {% for comment in comments %}
-                        <div class="comment">
-                            <span>{{ comment.comment_author.username }} || </span>
-                            <span>{{ comment.created_date }}</span>
-                            <p>{{ comment.comment_content }}</p>
-                            <hr>
-                            </hr>
-                        </div>
-                        {% empty %}
-                        <p>No comments yet.</p>
-                        {% endfor %}
                     </div>
                 </div>
             </div>
 
+            <!-- EDIT/DELETE displayed to post's author only -->
             {% if request.user == activity.author %}
             <div class="d-grid gap-2 col-4 mx-auto">
                 <div>
-                    <a href="{% url 'edit_activity' activity_id=activity.id %}"><button
-                            class="btn btn-success btn-custom" type="button">Edit</button></a>
-                    <a href="{% url 'activity_confirm_delete' activity_id=activity.id %}"><button
-                            class="btn btn-danger btn-custom" type="button">Delete</button></a>
+                    <!-- Button to edit post -->
+                    <a href="{% url 'edit_activity' activity_id=activity.id %}"
+                        class="btn btn-success btn-custom">Edit</a>
+                    <!-- Button to delete post -->
+                    <a href="{% url 'activity_confirm_delete' activity_id=activity.id %}"
+                        class="btn btn-danger btn-custom">Delete</a>
                 </div>
+                {% endif %}
             </div>
-            {% endif %}
+
         </div>
-    </div>
 
 
-    {% endblock content %}
+        {% endblock content %}

@@ -26,6 +26,7 @@ class ActivityForm(forms.ModelForm):
         }
 
 
+
 class CommentForm(forms.ModelForm):
     '''
     Create form to add a Comment

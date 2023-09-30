@@ -2,8 +2,8 @@
 {% load static %}
 
 {% block content %}
-
-<div class="container-fluid position-styling">
+<!-- List view/ public posts only, visible to any user -->
+<div class="container-fluid">
   <div class="row mb-4">
     {% for activity in activities  %}
     {% if activity.privacy == 'public' %}
