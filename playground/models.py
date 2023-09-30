@@ -13,7 +13,7 @@ PRIVACY = (
 
 class Activity(models.Model):
     '''
-    PostActivity model to create and display entries added by users
+    Activity model to create and display entries added by users
     '''
     author = models.ForeignKey(User, on_delete=models.CASCADE,
                                related_name='post_author')
@@ -44,6 +44,9 @@ class Activity(models.Model):
 
 
 class Comment(models.Model):
+    '''
+    Comment model to create and display comments added by users
+    '''
     activity = models.ForeignKey(Activity, on_delete=models.CASCADE,
                                  related_name='comment')
     comment_author = models.ForeignKey(User, on_delete=models.CASCADE)

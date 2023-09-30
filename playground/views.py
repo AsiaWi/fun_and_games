@@ -11,12 +11,19 @@ from django.shortcuts import get_object_or_404
 
 
 class IndexView(TemplateView):
+    '''
+    View to display main page/home
+    '''
     template_name = 'playground/index.html'
 
 
 class AddActivity(LoginRequiredMixin, CreateView):
     '''
-    class based view to add post by user
+    class based view to add a post by user
+    Set template name, model specified.
+    Redirect URL - following successful submission.
+    When form valid set activity author to currect auth user.
+    Add success message to be displayed to the user
     '''
     template_name = 'playground/add_activity.html'
     model = Activity
@@ -36,7 +43,12 @@ class AddActivity(LoginRequiredMixin, CreateView):
 
 
 class DeleteActivity(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
-
+    '''
+    Class based view to delete Activity post.
+    Check if user is authorised to delete post.
+    Get object to delete based on the activity_id.
+    Manage delete request and display success message to the user
+    '''
     def test_func(self):
         return self.request.user == self.get_object().author
 
@@ -53,6 +65,12 @@ class DeleteActivity(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
 
 class UpdateActivity(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    '''
+    Class based view to Update Activity post.
+    Check if user is auth to update post
+    Get object based on activity_id
+    Handle form submission when valid and display success message to user
+    '''
 
     model = Activity
     success_url = '/profile/'
@@ -73,6 +91,10 @@ class UpdateActivity(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
 
 class DisplayActivityList(ListView):
+    '''
+    Class based view to display a list of activities
+    Display 3 per page
+    '''
     model = Activity
     template_name = 'playground/activities.html'
     paginate_by = 3
@@ -80,6 +102,10 @@ class DisplayActivityList(ListView):
 
 
 class DisplayProfileWall(LoginRequiredMixin, ListView):
+    '''
+    Class based view to display a list of activities
+    Display 3 per page
+    '''
     model = Activity
     template_name = 'playground/profile_wall.html'
     context_object_name = 'activities'
@@ -87,6 +113,13 @@ class DisplayProfileWall(LoginRequiredMixin, ListView):
 
 
 class DisplayActivityDetails(DetailView):
+    '''
+    Class based view to display details of an activity
+    Retrieves info about likes and comments
+    Handle comment form submission when valid and display success message
+    to user
+
+    '''
     model = Activity
     template_name = 'playground/view_activity_details.html'
     context_object_name = 'activity'
@@ -123,6 +156,12 @@ class DisplayActivityDetails(DetailView):
 
 
 def ActivityLike(request, pk):
+    '''
+    Functional view gets activity object based on activity_id
+    checks if user liked activity
+    add like if not/ removes if yes
+    redirects user back to the same page
+    '''
     activity = get_object_or_404(Activity, id=request.POST.get('activity_id'))
     if activity.likes.filter(id=request.user.id).exists():
         activity.likes.remove(request.user)

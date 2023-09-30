@@ -2,10 +2,6 @@ from .models import Activity, Comment
 from django import forms
 
 
-
-
-
-
 class ActivityForm(forms.ModelForm):
     '''
     Create form to add Activity
@@ -13,8 +9,9 @@ class ActivityForm(forms.ModelForm):
 
     class Meta:
         model = Activity
-        fields = ['title', 'excerpt', 'featured_image', 'image_alt', 'content', 'link', 'privacy',]
-        
+        fields = ['title', 'excerpt', 'featured_image', 'image_alt', 'content',
+                  'link', 'privacy', ]
+
         labels = {
             'title': 'Activity Title',
             'excerpt': 'Post Teaser',
@@ -26,7 +23,6 @@ class ActivityForm(forms.ModelForm):
         }
 
 
-
 class CommentForm(forms.ModelForm):
     '''
     Create form to add a Comment
@@ -34,8 +30,8 @@ class CommentForm(forms.ModelForm):
 
     class Meta:
         model = Comment
-        fields = ['comment_content',]
-        
+        fields = ['comment_content', ]
+
         labels = {
             'comment_content': 'Leave your comment here:'
         }
