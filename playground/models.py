@@ -21,7 +21,7 @@ class Activity(models.Model):
     excerpt = models.CharField(max_length=150, blank=True)
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now_add=True)
-    featured_image = ResizedImageField(size=[400, None], quality=100,
+    featured_image = ResizedImageField(size=[600, None], quality=100,
                                        upload_to='activities/',
                                        force_format='WEBP',
                                        blank=False, null=False)
