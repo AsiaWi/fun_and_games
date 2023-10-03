@@ -10,11 +10,16 @@
     <p><strong>This page is just for you! You can see your public and private posts here</strong></p>
   </div>
 </div>
+<!-- Message for user if no posts has been added yet -->
+{% if activities|length == 0 %}
+<div class="col-12 bg-warning">
+  <p class="text-center">You haven't added any posts yet.</p>
+</div>
+{% endif %}
 <!-- card container/list view/user's own posts only -->
 <div class="container-fluid">
   <div class="row mb-4">
     {% for activity in activities  %}
-    {% if request.user == activity.author %}
     <div class="col-lg-4 col-md-6 col-12 mb-4">
       <div class="card mt-4">
         <img src="{{ activity.featured_image.url }}" id='card-img-{{activity.id}}' class="card-img-top"
@@ -33,13 +38,12 @@
         </div>
       </div>
     </div>
-    {% endif %}
     {% endfor %}
   </div>
 </div>
 
-<!-- Pagination / no pagination displayed if user has no posts -->
-{% if activities.author|length > 0 %}
+
+<!-- Pagination/ 3 posts per page -->
 {% if is_paginated %}
 <nav aria-label="Page navigation" class="justify-content-center pagination">
   <ul class="pagination justify-content-center">
@@ -48,7 +52,7 @@
       <a class="page-link custom-pagination" href="?page=1" tabindex="-1">First</a>
     </li>
     <li class="page-item">
-      <a class="page-link custom-pagination" href="?page={{ activities.previous_page_number }}">Previous</a>
+      <a class="page-link custom-pagination" href="?page={{ page_obj.previous_page_number }}">Previous</a>
     </li>
     {% endif %}
     {% for page in page_obj.paginator.page_range %}
@@ -58,15 +62,15 @@
     {% endfor %}
     {% if page_obj.has_next %}
     <li class="page-item">
-      <a class="page-link custom-pagination" href="?page={{ activities.next_page_number}} ">Next</a>
+      <a class="page-link custom-pagination" href="?page={{ page_obj.next_page_number}} ">Next</a>
     </li>
     <li class="page-item">
-      <a class="page-link custom-pagination" href="?page={{ activities.paginator.num_pages }}">Last</a>
+      <a class="page-link custom-pagination" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
     </li>
     {% endif %}
   </ul>
 </nav>
 {% endif %}
-{% endif %}
+
 
 {% endblock %}

@@ -97,8 +97,11 @@ class DisplayActivityList(ListView):
     '''
     model = Activity
     template_name = 'playground/activities.html'
-    paginate_by = 3
     context_object_name = 'activities'
+    paginate_by = 3
+
+    def get_queryset(self):
+        return Activity.objects.filter(privacy='public')
 
 
 class DisplayProfileWall(LoginRequiredMixin, ListView):
@@ -110,6 +113,9 @@ class DisplayProfileWall(LoginRequiredMixin, ListView):
     template_name = 'playground/profile_wall.html'
     context_object_name = 'activities'
     paginate_by = 3
+
+    def get_queryset(self):
+        return Activity.objects.filter(author=self.request.user)
 
 
 class DisplayActivityDetails(DetailView):
