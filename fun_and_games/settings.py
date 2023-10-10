@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-import os 
+import os
 import dj_database_url
 from django.contrib.messages import constants as messages
 if os.path.isfile('env.py'):
@@ -28,9 +28,10 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['8000-asiawi-funandgames-0ypziizicl3.ws-eu104.gitpod.io', 'fun-and-games-a99303d46c12.herokuapp.com', '8000-asiawi-funandgames-0ypziizicl3.ws-eu105.gitpod.io']
+ALLOWED_HOSTS = ['fun-and-games-a99303d46c12.herokuapp.com',
+                 '8000-asiawi-funandgames-0ypziizicl3.ws-eu105.gitpod.io']
 
 
 # Application definition
@@ -88,7 +89,7 @@ TEMPLATES = [
         },
     },
 ]
-CRISPY_TEMPLATE_PACK= 'bootstrap4'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
  #allauth
 
 SITE_ID = 1
@@ -97,7 +98,6 @@ ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
-
 
 
 WSGI_APPLICATION = 'fun_and_games.wsgi.application'

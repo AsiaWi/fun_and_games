@@ -49,18 +49,20 @@
                                 <!-- solid heart icon if user liked post -->
                                 {% if activity_liked %}
                                 <button type="submit" name="activity_id" value="{{object.id}}"
-                                    style="border: 0 !important;" aria-label="unlike the post"><i class="fa-solid fa-heart"></i></button>
+                                    style="border: 0 !important;" aria-label="unlike the post"><i
+                                        class="fa-solid fa-heart"></i></button>
                                 {% else %}
                                 <!-- hollow heart icon if user didn't like the post yet -->
                                 <button type="submit" name="activity_id" value="{{object.id}}"
-                                    style="border: 0 !important;" aria-label="like the post"><i class="fa-regular fa-heart"></i></button>
+                                    style="border: 0 !important;" aria-label="like the post"><i
+                                        class="fa-regular fa-heart"></i></button>
                                 {% endif %}
                             </form>
                             {% else %}
                             <!-- if user not authenticated- hollow icon will link to login page on click /
                             once logged in -user taken back to the post-->
-                            <a href="{% url 'account_login' %}?next={{ request.get_full_path }}" aria-label="sign in and like the post"><i
-                                    class="fa-regular fa-heart"></i></a><br>
+                            <a href="{% url 'account_login' %}?next={{ request.get_full_path }}"
+                                aria-label="sign in and like the post"><i class="fa-regular fa-heart"></i></a><br>
                             {% endif %}
                         </div>
                         <!-- a number of likes against the post -->
@@ -80,7 +82,7 @@
                     </div>
                 </div>
                 <!-- A link provided by author will display IF provided -->
-                <div class="container">
+                <div class="container bg-light">
                     {% if activity.link %}
                     <span><a href="{{activity.link}}">{{activity.link}}</a></span>
                     {% endif %}
@@ -144,6 +146,6 @@
             </div>
 
         </div>
+    </div>
 
-
-        {% endblock content %}
+    {% endblock content %}

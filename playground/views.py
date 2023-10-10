@@ -94,6 +94,7 @@ class DisplayActivityList(ListView):
     '''
     Class based view to display a list of activities
     Display 3 per page
+    Filters activity posts and retrieves only ones that are public
     '''
     model = Activity
     template_name = 'playground/activities.html'
@@ -108,6 +109,7 @@ class DisplayProfileWall(LoginRequiredMixin, ListView):
     '''
     Class based view to display a list of activities
     Display 3 per page
+    Filters activity posts and retrieves only authors own
     '''
     model = Activity
     template_name = 'playground/profile_wall.html'

@@ -1,6 +1,7 @@
 /* PAGE BASE LAYOUT */
 /* following code for sticky footer taken from https://css-tricks.com/couple-takes-sticky-footer/ */
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -57,10 +58,11 @@ header {
   from {
     transform: scale(1.5);
   }
+
   to {
     transform: scale(1.0);
   }
- }
+}
 
 /* text over hero img */
 #overlay {
@@ -69,7 +71,7 @@ header {
   border-color: rgba(245, 237, 237, 0.7);
   padding: 20px;
   text-align: center;
-  height:fit-content;
+  height: fit-content;
 }
 
 /* ACTIVITIES.HTML and PROFILE_WALL.HTML */
@@ -80,7 +82,7 @@ div.card {
   height: 100%;
 }
 
-[id*="card-img"]{
+[id*="card-img"] {
   margin: 15px 0 2px 0;
 }
 
@@ -93,10 +95,10 @@ a.custom-pagination {
 #banner-custom {
   border: inset;
   border-color: rgb(255, 255, 255);
-  background-color:rgb(125, 212, 255, 0.2);
+  background-color: rgb(125, 212, 255, 0.2);
   padding: 20px;
   text-align: center;
-  height:fit-content;
+  height: fit-content;
 }
 
 /* VIEW_ACTIVITY_DETAILS.HTML styling */
@@ -105,14 +107,15 @@ a.custom-pagination {
   width: 50%;
   margin: 5%;
 }
+
 /* keeping text inside container */
 .word-break {
   word-wrap: break-word;
 }
 
-#content-custom > p {
+#content-custom>p {
   word-wrap: break-word;
-  }
+}
 
 /* comments section link */
 a.comments-section-link {
@@ -121,34 +124,29 @@ a.comments-section-link {
 }
 
 #hover-comment:hover {
-  background-color:rgb(187, 180, 180);
+  background-color: rgb(187, 180, 180);
 }
 
 /* MEDIA QUERIES */
 
 /* for medium to large screen sizes from 900px wide and down */
-   @media screen and (min-width: 727px) {
-    #overlay {
-        position: absolute;
-        top: 40%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-color: rgba(245, 237, 237, 0.5);
-        border-style: outset;
-        border-color: rgba(245, 237, 237, 0.7);
-        text-align: center;
-        height:fit-content;
-        width:auto;
-        margin: 20px;
-    }
-
-     #overlay > p {
-      padding: 10px;
-     }
-     
-    }
-
-    .active {
-      color: blue;
-      background-color: #cf5c3f;
+@media screen and (min-width: 727px) {
+  #overlay {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(245, 237, 237, 0.5);
+    border-style: outset;
+    border-color: rgba(245, 237, 237, 0.7);
+    text-align: center;
+    height: fit-content;
+    width: auto;
+    margin: 20px;
   }
+
+  #overlay>p {
+    padding: 10px;
+  }
+
+}
