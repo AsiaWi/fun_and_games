@@ -66,12 +66,7 @@ header {
 
 /* text over hero img */
 #overlay {
-  background-color: rgba(245, 237, 237, 0.5);
-  border-style: outset;
-  border-color: rgba(245, 237, 237, 0.7);
   padding: 20px;
-  text-align: center;
-  height: fit-content;
 }
 
 /* ACTIVITIES.HTML and PROFILE_WALL.HTML */
@@ -102,7 +97,7 @@ a.custom-pagination {
 }
 
 /* VIEW_ACTIVITY_DETAILS.HTML styling */
-btn-custom {
+.btn-custom {
   height: 40px;
   width: 50%;
   margin: 5%;
