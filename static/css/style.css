@@ -18,8 +18,7 @@ footer {
   flex-shrink: 0;
 }
 
-footer a,
-footer a > li {
+footer a {
   font-size: 250%;
   color: black;
   padding: 15px;
