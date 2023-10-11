@@ -78,7 +78,6 @@ header {
 /* list view styling */
 div.card {
   border-radius: 25px;
-  border-color: black;
   height: 100%;
 }
 
