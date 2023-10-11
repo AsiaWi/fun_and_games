@@ -42,15 +42,18 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+      #cloudinary
+    'cloudinary_storage',
     'django.contrib.staticfiles',
+    'cloudinary',
+
+    
     'django.contrib.sites', #allauth
 
     # Apps
     'playground',
 
-    #cloudinary
-    'cloudinary_storage',
-    'cloudinary',
+  
 
     #allauth
     'allauth',

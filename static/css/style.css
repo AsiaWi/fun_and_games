@@ -79,6 +79,7 @@ header {
 div.card {
   border-radius: 25px;
   height: 100%;
+  border-color: black;
 }
 
 [id*="card-img"] {
