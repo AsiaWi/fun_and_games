@@ -101,9 +101,9 @@ a.custom-pagination {
 }
 
 /* VIEW_ACTIVITY_DETAILS.HTML styling */
-.btn-custom {
+a.btn-custom {
   height: 40px;
-  width: 50%;
+  width: 100%;
   margin: 5%;
 }
 

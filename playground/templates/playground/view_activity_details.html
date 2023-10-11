@@ -48,14 +48,14 @@
                                 {% csrf_token %}
                                 <!-- solid heart icon if user liked post -->
                                 {% if activity_liked %}
-                                <button type="submit" name="activity_id" value="{{object.id}}"
+                                <button class="btn bg-transparent p-0" type="submit" name="activity_id" value="{{object.id}}"
                                     style="border: 0 !important; color:rgb(82, 82, 238)" aria-label="unlike the post"><i
-                                        class="fa-solid fa-heart"></i> </button>
+                                        class="fa-solid fa-heart"></i></button>
                                 {% else %}
                                 <!-- hollow heart icon if user didn't like the post yet -->
-                                <button type="submit" name="activity_id" value="{{object.id}}"
+                                <button class="btn bg-transparent p-0" type="submit" name="activity_id" value="{{object.id}}"
                                     style="border: 0 !important; color:rgb(82, 82, 238)" aria-label="like the post"><i
-                                        class="fa-regular fa-heart"></i> </button>
+                                        class="fa-regular fa-heart"></i></button>
                                 {% endif %}
                             </form>
                             {% else %}
