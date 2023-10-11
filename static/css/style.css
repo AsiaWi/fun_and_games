@@ -128,8 +128,8 @@ a.comments-section-link {
 
 /* MEDIA QUERIES */
 
-/* for medium to large screen sizes from 900px wide and down */
-@media screen and (min-width: 727px) {
+/* for large screen sizes from 900px wide and up */
+@media screen and (min-width: 1000px) {
   #overlay {
     position: absolute;
     top: 40%;
@@ -144,5 +144,12 @@ a.comments-section-link {
     padding: 10px;
   }
 
+}
+
+/* for medium to large screen sizes from 700px wide and up */
+@media screen and (min-width: 768px){
+  .btn-custom{
+    width: 50%;
+  }
 }
 
