@@ -18,7 +18,8 @@ footer {
   flex-shrink: 0;
 }
 
-footer a {
+footer a,
+footer a > li {
   font-size: 250%;
   color: black;
   padding: 15px;
@@ -102,7 +103,7 @@ a.custom-pagination {
 }
 
 /* VIEW_ACTIVITY_DETAILS.HTML styling */
-.btn-custom {
+btn-custom {
   height: 40px;
   width: 50%;
   margin: 5%;
@@ -151,7 +152,3 @@ a.comments-section-link {
 
 }
 
-a.active-custom { 
-  color: red !important;
-  text-decoration: underline;
-}

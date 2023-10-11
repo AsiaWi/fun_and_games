@@ -137,10 +137,10 @@
                 <div>
                     <!-- Button to edit post -->
                     <a href="{% url 'edit_activity' activity_id=activity.id %}"
-                        class="btn btn-success btn-custom">Edit</a>
+                        class="btn btn-custom" style="background-color: rgb(109, 242, 204);">Edit</a>
                     <!-- Button to delete post -->
                     <a href="{% url 'activity_confirm_delete' activity_id=activity.id %}"
-                        class="btn btn-danger btn-custom">Delete</a>
+                        class="btn-custom btn" style="background-color: rgb(239, 129, 129);">Delete</a>
                 </div>
                 {% endif %}
             </div>
