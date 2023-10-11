@@ -150,3 +150,8 @@ a.comments-section-link {
   }
 
 }
+
+a.active-custom { 
+  color: red !important;
+  text-decoration: underline;
+}
