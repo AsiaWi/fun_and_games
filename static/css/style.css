@@ -148,7 +148,7 @@ a.comments-section-link {
 
 /* for medium to large screen sizes from 700px wide and up */
 @media screen and (min-width: 768px){
-  .btn-custom{
+  a.btn-custom{
     width: 50%;
   }
 }
