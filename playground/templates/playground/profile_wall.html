@@ -25,7 +25,7 @@
         <img src="{{ activity.featured_image.url }}" id='card-img-{{activity.id}}' class="card-img-top"
           alt="{{activity.image_alt}}">
         <span class="card-text text-muted" id="overlay-text-{{activity.id}}">Last updated:
-          {{ activity.date_updated.date}} || {{activity.privacy | upper}}</span>
+          {{ activity.date_created.date}} || {{activity.privacy | upper}}</span>
         <div class="card-body">
           <h1 class="card-title">{{ activity.title | truncatechars:30 }}</h1>
           <p class="card-text">{{ activity.excerpt | truncatechars:80 }}</p>
