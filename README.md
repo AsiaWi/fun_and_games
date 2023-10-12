@@ -19,6 +19,11 @@ Fun & Games is an online portal where anyone can share and/or find interesting i
   - [The Skeleton Plane](#the-skeleton-plane)
     - [Wireframes](#wireframes)
     - [Database Design](#database-design)
+  - [The Surface Plane](#the-surface-plane)
+    - [Design](#design)
+    - [Colour-Scheme](#colour-scheme)
+    - [Typography](#typography)
+    - [Imagery](#imagery)
 # User Experience Design
 
 ## The Strategy Plane
@@ -348,3 +353,9 @@ All the user stories below have been implemented in order to be able to build up
 ### Wireframes
 
 ### Database design
+![entity_relationship_diagram](docs/readme_img/entity_relationship_diagram.png)
+
+- The ER Diagram has been generated with DBeaver. 
+- The diagram shows relationships between models
+  - The user model supports pretty much all existing features and allows user to interact with posts when logged in with the help of foreign key
+  - The activity model also supports comments and likes
