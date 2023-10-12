@@ -5,7 +5,7 @@ Fun & Games is an online portal where anyone can share and/or find interesting i
 ![mockup](docs/readme_img/mockup_techsini_screenshot.png)
 
 ## Table of Contents
-- [Fun & Games](#fun-&-games)
+- [Fun & Games](#fun--games)
   - [Table of Contents](#table-of-contents)
 - [User Experience Design](#user-experience-design)
   - [The Strategy Plane](#the-strategy-plane)
@@ -26,6 +26,14 @@ Fun & Games is an online portal where anyone can share and/or find interesting i
     - [Imports](#imports)
        - [Python Packages](#internal-packages)
        - [External Packages](#external-packages)
+  - [Testing](#testing)
+  - [Deployment](#deployment)
+    - [Version Control](#version-control)
+    - [Deploying in Heroku](#deploying-in-heroku)
+    - [Cloning the Repository](#cloning-the-repository)
+    - [Forking](#forking)
+  - [Credits](#credits)
+
 
 # User Experience Design
 
@@ -422,3 +430,73 @@ Installed as dependencies with another packages:
 * python3-openid==3.2.0
 * sqlparse==0.4.4
 * urllib3==1.26.16
+
+## Testing
+
+## Deployment
+
+### Version Control
+
+* Git 
+    Code has been pushed with git commands to remote repository on Github with commands:
+
+   `` git add .`` - to add files ready to commit
+
+   ``git commit -m "message"`` - to commit the code to local 
+    repository ready to be pushed
+
+   ``git push`` - final command used to push commited code to remote repo on Github
+   
+### Deploying in Heroku 
+* The project has been deployed on Heroku as follows:
+     * Use: ``pip freeze > requirements.txt`` to add external libraries to deployed app.
+     * Create Heroku account ( step by step guide [here](https://coding-boot-camp.github.io/full-stack/heroku/deploy-with-heroku-and-mysql))
+     * In the top right, click 'New'
+     * Click 'Create new app'
+     * Give your app a name and select your region from drop down 
+     * Click 'Create new app' 
+     * Go to 'settings' tab, it's important you do it before deployment
+     * Scroll down to 'config vars' section and key:
+        - PORT and value: 8000
+        - CLOUDINARY_URL: ''
+        - DATABASE_URL : ''
+        - SECRET_KEY: ''
+     * Scroll down to 'Buildpacks' section
+     * Click 'Add buildpack'
+     * Add Python as first dependency and select 'Save changes'
+     * Add node.js as a second dependency and save again
+     (This is settings section done)
+     * Select 'Deploy' tab at the top
+     * Select ' Github' from 'Deployment method'
+     * type the name of how you called project in Github and click 'search'
+     * Scroll down and select manual deployment method
+     * Auto method has also been selected to allow the project to update every time i push the code from Gitpod
+     * You can now click to view the app ready and running
+
+### CLONING THE REPOSITORY
+
+1. On Github navigate to repository
+2. Click "Code" a green button shown right above the file list
+3. Copy the URL of the repo using HTTPS, SSH OR Github CLI
+4. Open Git Bash
+5. Change the current working directory to the location where you want the cloned directory
+6. Type git clone, and then paste the URL you copied earlier
+7. Press enter to create local Clone
+
+For more details on how to clone the remote repo in order to create a local copy for own use, please click [here](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
+
+
+### FORKING
+1. On Github navigate to repository
+2. click "Fork" located towards the top right corner
+3. Select "owner" for the forked repo, from the dropdown menu under "owner" Under "Owner"
+4. It will create forked repo under the same name as orinial by default but you can type a name in "Repository name" or add a description in "Description" box.
+5. Click "Create fork" !
+
+Forking allows you to make any changes without affecting original project. You can send the suggestions over by submitting pull request. Project owner can review the pull request before accepting the suggestions and merging them.
+
+
+For more details on how to fork the repo, in order to for example suggest any changes to the project you can click [here](https://docs.github.com/en/get-started/quickstart/fork-a-repo) 
+
+
+When you have fork to a repository you don't have access to files locally on your device, for this you will need to clone the forked repo.
