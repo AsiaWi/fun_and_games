@@ -1,108 +1,98 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Fun & Games
 
-Welcome AsiaWi,
+Fun & Games is an online portal where anyone can share and/or find interesting ideas on how to spend time in a fun way. Wheter you're simply bored of your routine or you're away and need an inspiration. Users can leave links to pages where they can book an event or simply find out more about a specific activity. Comments section allows users to communicate, share their own experiences or ask questions if needed. Sometimes all it takes to snap out of it is one click away..: [Live Page](https://fun-and-games-a99303d46c12.herokuapp.com/)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+![mockup](docs/readme_img/mockup_techsini_screenshot.png)
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+## Table of Contents
+- [Fun & Games](#fun-&-games)
+  - [Table of Contents](#table-of-contents)
+- [User Experience Design](#user-experience-design)
+  - [The Strategy Plane](#the-strategy-plane)
+    - [Site Goals](#site-goals)
+    - [Agile Planning](#agile-planning)
+      - [Milestones](#milestones)
+      - [User Stories](#user-stories)
 
-## Gitpod Reminders
+# User Experience Design
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## The Strategy Plane
 
-`python3 -m http.server`
+### Site Goals
+The site is aimed at anyone who wants to share an interesting and fun way to spend time. This could be anything from activity indoor, outdoor or great locations where you can book an experience with your family or friends.
+It is also aimed at people who are simply searching for insporation when they're lacking ideas on what to do wheter it's due to a burn out, change of location or a need to experience new and crazy things.
 
-A blue button should appear to click: _Make Public_,
+### Agile Planning
 
-Another blue button should appear to click: _Open Browser_.
+The project was developed using agile methodology. Small features have been assigned to 6 milestones. This was then divided into 4 sprints. Labels have been used to mark which features the project : 'must have', 'should have', 'could have'. This was done so that I create a MVP in the time I have and only focus on the 'should have's' or 'could have's' if time allows. 
+Each user story was closed if all acceptance criteria have been met.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+Project board has been used to help me with the process [PROJECT BOARD-link] (https://github.com/users/AsiaWi/projects/3/views/1?visibleFields=%5B%22Title%22%2C%22Assignees%22%2C%22Status%22%2C%22Milestone%22%2C%22Labels%22%5D)
 
-A blue button should appear to click: _Make Public_,
+![PROJECT BOARD](docs/readme_img/project_board.png)
+#### Milestones
+- 1-Project setup:
+   This was a first task without it I wouldn't be able to continue with any of the project features so it was necessary to set up a basic structure of the project following the user stories included in this milestone.
+- 2-Authentication:
+   This milestone was needed to allow users to actually use the page so that the page is interactive
+- 3-Post Functions:
+   Includes all features enabling the CRUD functionality for the user
+- 4-UX/UI:
+   This improves users journey throughout the page and makes it a smooth experience for everyone.
+- 5-Documentation:
+   Needed to document the project
+- 6-Final deployment: 
+   Absolutely necessary step to make sure the page is deployed with no erros and allows anyone access to all features.
 
-Another blue button should appear to click: _Open Browser_.
+#### User Stories
+ Each Milestone contains user stories allowing me to build up the project with small features:
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
-------
-
-## Release History
-
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
-
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
-
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
-
-**July 2 2021:** Remove extensions that are not available in Open VSX.
-
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
-
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
+- Milestone 1- Project setup
+  - As a developer I need to set up the project so that I can build on it and create a mvp
+     - Install Django
+     - Create project
+     - Add first main app
+     - Add env.py file
+     - Add Procfile
+     - Install supporting libraries
+     - image database - Cloudinary
+     - database - ElephantSQL
+     - Settings.py edited to notify django of the supporting libraries
+     - Project deployed to Heroku
+  - As a developer I need to add static files so that *the website is user friendly
+  - As a developer I need to **create base.html file ** so that I have a basic structure of the page for the project
+  - As a developer I need to create navigation menu so that a website user can easily navigate between pages
+     - Home - for all users
+     - SignUp - for unauthorised users
+     - Login - for unauthorised users
+     - LogOut- for authorised users
+     - Profile (drop down) - for authorised users with function to:
+       - view profile
+       - add entry
+  - As a developer I need to create a footer so that I can include social media links
+  - As a developer I need to implement a superuser so that I can manage the website
+- Milestone 2-Authentication:
+  - As a developer I need to setup allauth so that users can have an option of signing up to the website for more features
+     - Install allauth
+     - Check that users can register/ login/logout of their account
+- Milestone 3-Post Functions:
+  - As a user I can add a post so that I can share an interesting activity location with others
+  - As a post owner I want others to have an option to leave a like under a post so that I know it has been helpful for others
+  - As a user I can add a comment to a post so that I can interact with others
+  - As a user I can edit posts I have shared so that I can correct any errors or update if necessary
+  - As a user I can open the post so that I can view the full post and it's details
+  - As a user I can delete previously shared post so that I can make sure no posts which are no longer relevant based on location or my interests are showing for others 
+  - As a user I can go to a page to view only my entries so that I can easily access them if needed
+  - As a page user I can view all shared posts on the website so that I can find interesting activity ideas
+- 4-UX/UI:
+  - As a developer I need to create a home page so that user knows what the page is about from the moment they enter it
+  - As a user I can navigate between pages so that the pages aren't too chaotic and overloaded
+  - As a developer I can style the signup/login/logout pages in order to improve UI/UX 
+  - As a user I can see confirmation messages when taking actions so that I know if they were successful or not
+  - As a developer I need to implement 403 error page so that **user can see it when unauthorised to view certain content 
+  - As a developer I need to implement 404 error page so that user is notified when accessing a link that doesn't exist
+  - As a developer I need to implement error 500 page ** so that user gets notified in case of an internal error
+- 5-Documentation:
+  - As a developer I need to create readme.md file so that the project is supported by good documentation
+- 6-Final deployment:
+  - As a developer I need to make sure the project is deployed to heroku so that everything looks and works as it should do
