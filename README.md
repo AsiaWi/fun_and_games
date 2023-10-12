@@ -168,11 +168,96 @@ Each of the following pages are accessible through the navigation menu as explai
 #### Edit Post
 `` USER STORY: As a user I can edit posts I have shared so that I can correct any errors or update if necessary``
 ![edit_post](docs/readme_img/edit_post.png)
- - This feature is available only if user is logged in and post belongs to the logged in user,when clicked - user will be taken back to ' add post' form,  if anauthorised user accesses link- the 403 error page will display. CRUD functionality.
+ - CRUD functionality. This feature is available only if user is logged in and post belongs to the logged in user,when clicked:
+   - user will be taken back to ' add post' form
+   - if anauthorised user accesses link- the 403 error page will display. 
+   - if user submits changes a message confirming that updates were saved will display if successful
  - The aim of this is so that is user makes any errors/ wants to update the post or simply changed mind and wants to change it from PUBLIC to PRIVATE (or the other way round)- they can update it here. 
 
  #### Delete Post 
- `` USEER STORY: As a user I can delete previously shared post so that I can make sure no posts which are no longer relevant based on location or my interests are showing for others ``
- 
+ `` USER STORY: As a user I can delete previously shared post so that I can make sure no posts which are no longer relevant based on location or my interests are showing for others ``
+
  ![delete_post](docs/readme_img/delete_post.png)
  ![delete_post_confirmation_page](docs/readme_img/delete_post_confirmation_page.png)
+
+ - CRUD functionality. This feature is available only if user is logged in and post belongs to the logged in user,when clicked:
+    - user will be taken to confirm deletion page
+    - if user clicks on 'no, go back to home page', post will not be deleted and user will be taken to home page
+    - if user clicks on ' yes, continue', post will be deleted and a message confirming deletion will display. User will be taken back to own profile wall.
+    - if anauthorised user accesses link- the 403 error page will display. 
+ - The aim of this is for user to be able to delete any unwanted content 
+
+ #### LIKES
+ `` USER STORY: As a post owner I want others to have an option to leave a like under a post so that I know it has been helpful for others ``
+ ![liked_post](docs/readme_img/liked.png)
+ ![unliked_post](docs/readme_img/unliked.png)
+
+ - This feature allows any logged inn user to like the post. When clicked:
+   - Unauthorised user - will be taken to 'sign-in' page and upon successful login will be taken back to the post page
+   - Authorised user - if didn't previously like the post - hollow heart icon will be displayed -if clicked - the icon will change to solid one and a number of likes will increase by one
+   - Authorised user - if previously liked the post- solid heart icon will be shown- if clicked- the icon will change to hollow one and the number of likes will decrease by one.
+  
+#### COMMENTS
+`` USER STORY: As a user I can add a comment to a post so that I can interact with others ``
+ - As comments section is below the post, a link displaying a number of comments shows at the top of the post so that user can click on it and instead of scrolling down, the link will take a user to comments section. This helps if posts are long as it avoids a lot of scrolling.
+
+ ![comments_link](docs/readme_img/comments_link.png)
+
+ 
+ - This feature allows users to leave comments 
+    - If user isn't logged in they will see a button to log in, once logged in they will be taken back to the post page
+
+    ![unauthorised_comments](docs/readme_img/unauth_comments.png)
+    - if user is logged in they will see a form to leave a comment, once submitted- a confirmation message will display at top of the screen and the comment will display below in comments section, if post has no comments yet a short message 'No comments yet.' will be displayed
+
+     ![logged_in_comments](docs/readme_img/logged_in_comments.png)
+
+     ![commented_post](docs/readme_img/commented.png)
+
+#### List View
+`` USER STORY: As a page user I can view all shared posts on the website so that I can find interesting activity ideas ``
+
+#### Profile Wall
+`` USER STORY: As a user I can go to a page to view only my entries so that I can easily access them if needed ``
+
+#### Post Detail View
+`` USER STORY: As a user I can open the post so that I can view the full post and it's details ``
+
+#### Page Pagination
+`` USER STORY: As a user I can navigate between pages so that the pages aren't too chaotic and overloaded``
+
+#### Confirm Actions Messages
+`` USER STORY: As a user I can see confirmation messages when taking actions so that I know if they were successful or not``
+
+#### Error Pages
+`` USER STORY: As a developer I need to implement 403 error page so that user can see it when unauthorised to view certain content ``
+
+`` USER STORY: As a developer I need to implement 404 error page so that user is notified when accessing a link that doesn't exist ``
+
+`` USER STORY: As a developer I need to implement error 500 page ** so that user gets notified in case of an internal error``
+
+#### PROJECT SETUP/ FINAL TASKS
+
+All the user stories below have been implemented in order to be able to build up on project/ finish it off:
+
+`` As a developer I need to set up the project so that I can build on it and create a mvp 
+    - Install Django
+     - Create project
+     - Add first main app
+     - Add env.py file
+     - Add Procfile
+     - Install supporting libraries
+     - image database - Cloudinary
+     - database - ElephantSQL
+     - Settings.py edited to notify django of the supporting libraries
+     - Project deployed to Heroku ``
+     
+`` As a developer I need to add static files so that *the website is user friendly``
+
+`` As a developer I need to **create base.html file ** so that I have a basic structure of the page for the project``
+
+`` As a developer I need to implement a superuser so that I can manage the website``
+
+`` As a developer I need to create readme.md file so that the project is supported by good documentation``
+
+`` As a developer I need to make sure the project is deployed to heroku so that everything looks and works as it should do``
