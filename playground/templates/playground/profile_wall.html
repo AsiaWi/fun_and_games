@@ -24,7 +24,7 @@
       <div class="card mt-4">
         <img src="{{ activity.featured_image.url }}" id='card-img-{{activity.id}}' class="card-img-top"
           alt="{{activity.image_alt}}">
-        <span class="card-text text-muted" id="overlay-text-{{activity.id}}">Last updated:
+        <span class="card-text text-muted" id="overlay-text-{{activity.id}}">Created:
           {{ activity.date_created.date}} || {{activity.privacy | upper}}</span>
         <div class="card-body">
           <h1 class="card-title">{{ activity.title | truncatechars:30 }}</h1>
