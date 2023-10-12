@@ -13,7 +13,9 @@ Fun & Games is an online portal where anyone can share and/or find interesting i
     - [Agile Planning](#agile-planning)
       - [Milestones](#milestones)
       - [User Stories](#user-stories)
-
+  - [The Structure Plane](#the-structure-plane)
+    - [Features](#features)
+    - [Features Left To Implement](#features-left-to-implement)
 # User Experience Design
 
 ## The Strategy Plane
@@ -96,3 +98,81 @@ Project board has been used to help me with the process [PROJECT BOARD-link] (ht
   - As a developer I need to create readme.md file so that the project is supported by good documentation
 - 6-Final deployment:
   - As a developer I need to make sure the project is deployed to heroku so that everything looks and works as it should do
+
+## The Structure Plane
+
+### Features
+All features have been implemented with user stories in mind 
+
+#### Navigation menu
+``USER STORY As a developer I need to create navigation menu so that a website user can easily navigate between pages``
+![nav_bar_large_screens](docs/readme_img/nav_bar.png)
+![nav_bar_small_screens](docs/readme_img/nav_bar_small_screens.png)
+ - Nav bar when user authorised:
+ ![nav_bar_auth](docs/readme_img/nav_bar_auth.png)
+
+- This is shown the same on all pages for consistent design and good UX. Responsive design allows for hamburger bar on smaller screens. When user is logged in - a 'hello' message including username is displayed.
+- The aim of the feature is so that the user can easily navigate around the page. Username shown is there for confirmation of logged in state for user on each page.  Options the user can select differ based on wheter the user is logged in or not. This is so that the nav bar isn't overcrowded and is simple to use.
+     - Home - for all users
+     - Activities - for all users
+     - SignUp - for unauthorised users
+     - SignIn - for unauthorised users
+     - LogOut- for authorised users
+     - Profile (drop down) - for authorised users with function to:
+       - view profile (WALL)
+       - add entry (ADD POST)
+
+#### Home/Index Page
+`` USER STORY: As a developer I need to create a home page so that user knows what the page is about from the moment they enter it``
+![home_page](docs/readme_img/home_page.png)
+
+- This is the first thing user is able to see when accessing the website. Quick message explains what the page is about and provides an invite to sign up. A welcoming hero image is supposed raise user's interests to explore the page more
+- The aim of the page is to keep anyone who just entered the page interested and encourage to explore it more
+
+#### Footer
+`` USER STORY: As a developer I need to create a footer so that I can include social media links``
+![footer](docs/readme_img/footer.png)
+
+- This section includes social media links, as it's educational page only it includes links to my social media links
+- The aim of this is so that the user can see more of my work if interested. If the page was real and had it's own social media the aim wouuld be the same
+
+#### Sign-In/ Sign-Up/ Log-Out
+Implementing this user story allows users to login/out and sign-up
+`` USER STORY As a developer I need to setup allauth so that users can have an option of signing up to the website for more features``
+Implementing this user story improves user experience whilst using the feature
+``USER STORY: As a developer I can style the signup/login/logout pages in order to improve UI/UX ``
+
+Each of the following pages are accessible through the navigation menu as explained above.
+![sign_up](docs/readme_img/sign_up.png)
+![sign_in](docs/readme_img/sign_in.png)
+![logout](docs/readme_img/log_out.png)
+
+- These pages allow the user to sign up so that they have more options to interact with other pages or post their own.
+- The aim of these features is so that the page is more interactive and users have access to their own posts.
+
+#### Add Post
+`` USER STORY: As a user I can add a post so that I can share an interesting activity location with others``
+![add_post](docs/readme_img/add_post.png)
+
+- This feature allows user to add their own post/entry. The following fields have been added:
+   - Activity Title - required
+   - Post Teaser (short teaser about the post content)- optional
+   - Add image- required
+   - Image description - required (img alt for users using assistive technology)
+   - Describe Activity- required (main post content)
+   - Can you leave a website link? - optional (this allows user to share any helpful links wheter it's a location to book an experience/class or simply more information about activity)
+   - Publish post?- required ( This allows user to keep post private until ready to publish so that everyone can see it)
+
+- The aim of this feature is so that they can share their own activities with others
+
+#### Edit Post
+`` USER STORY: As a user I can edit posts I have shared so that I can correct any errors or update if necessary``
+![edit_post](docs/readme_img/edit_post.png)
+ - This feature is available only if user is logged in and post belongs to the logged in user,when clicked - user will be taken back to ' add post' form,  if anauthorised user accesses link- the 403 error page will display. CRUD functionality.
+ - The aim of this is so that is user makes any errors/ wants to update the post or simply changed mind and wants to change it from PUBLIC to PRIVATE (or the other way round)- they can update it here. 
+
+ #### Delete Post 
+ `` USEER STORY: As a user I can delete previously shared post so that I can make sure no posts which are no longer relevant based on location or my interests are showing for others ``
+ 
+ ![delete_post](docs/readme_img/delete_post.png)
+ ![delete_post_confirmation_page](docs/readme_img/delete_post_confirmation_page.png)
