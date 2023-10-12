@@ -20,10 +20,13 @@ Fun & Games is an online portal where anyone can share and/or find interesting i
     - [Wireframes](#wireframes)
     - [Database Design](#database-design)
   - [The Surface Plane](#the-surface-plane)
-    - [Design](#design)
-    - [Colour-Scheme](#colour-scheme)
-    - [Typography](#typography)
-    - [Imagery](#imagery)
+    - [Design/ Colour-Scheme/ Font/ Images](#design-colour-scheme-font-images)
+  - [Technolgies](#technolgies)
+    - [Tools and Technologies](#tools-and-technologies)
+    - [Imports](#imports)
+       - [Python Packages](#internal-packages)
+       - [External Packages](#external-packages)
+
 # User Experience Design
 
 ## The Strategy Plane
@@ -294,10 +297,10 @@ Each of the following pages are accessible through the navigation menu as explai
 ![action_message](docs/readme_img/action_message.png)
 
 - This feature informs a user if action taken has been successful
-- The aim of this feature is to keep the user informed if action they have taken has been successfuly performed, for example when leaving a comment, if successfuly submitted- a message will be displayed to inform.
+- The aim of this feature is to keep the user informed if action they have taken has been successfuly performed, for example when leaving a comment, if successfully submitted- a message will be displayed to inform.
 - Message will display when:
   - leaving comments
-  - successfuly deleted post
+  - successfully deleted post
   - post edited
   - user signed in-out
   - post added
@@ -359,3 +362,63 @@ All the user stories below have been implemented in order to be able to build up
 - The diagram shows relationships between models
   - The user model supports pretty much all existing features and allows user to interact with posts when logged in with the help of foreign key
   - The activity model also supports comments and likes
+
+## The Surface Plane
+### Design/ Colour-Scheme/ Font/ Images
+- The design of the page has been kept clean and simple with room to develop in the future. The clean design still makes it a visualy pleasant experience. 
+- The main/ hero image will hopefully bring happy emotions to user entering the page
+- Main colour used througout the page is blue extending the theme of the hero image.
+
+## Technologies
+
+### Tools and technologies
+* Balsamiq- used to create wireframes
+* Favicon.io - used to create favicon for the page
+* Font Awesome - used to add icons for the page
+* Visual Studio Code - used to develop the website
+* Github - used to host source code and deploy on Github Pages
+* Git- used to commit and push code 
+* HTML - used to create main static content of the website
+* CSS- used for website styling
+* JavaScript- used to create dynamic content and make page interactive
+* Python - used as the main language to code the logic of the page
+* Django - framework used
+* Heroku - to deploy the app 
+* Tiny PNG- used to compress the size of background
+* WEBP CONVERTER -used to convert background image, https://cloudconvert.com/webp-converter
+* Wave Evaluation Tool- used for checking accessibility
+* Techsini.com- used for creating mockup image
+* W3C Validator- used for checking HTML and CSS for errors
+* jshint validator - used to check java script code for errors
+* dbeaver - used to generate the ER Diagram
+
+### Imports
+
+#### Python packages
+* QuillField - used to provide an editor for user when adding post content
+* timezone - to display current time on comment submission
+* TemplateView, CreateView, ListView, DetailView, DeleteView, UpdateView - used to allow CRUD functionality
+* LoginRequiredMixin, UserPassesTestMixin - used to test and secure views from unauthorised access.
+* messages - used to add action messages to user on submission
+* HttpResponseRedirect, reverse : used to direct user to specific URL
+* get_object_or_404: used to get specific object from database or raise 404 exception if not found
+
+#### External packages
+* cloudinary==1.34.0 - media managment cloudinary
+* dj3-cloudinary-storage==0.0.6 - cloudinary storage
+* dj-database-url==0.5.0  - Django utility allows to utilize DATABASE_URL environment variable to configure Django application
+* psycopg2==2.9.7 - additional dependency needed to support PostgreSQL when deployed to heroku  
+* Django==3.2.21  - Framework used to buold the project
+* django-allauth==0.56.1  - authentication in django allowing user to sign- up/ sign-in/log-out
+* requests-oauthlib==1.3.1 - installed with the allauth above
+* django-crispy-forms==1.14.0 - enabling me to display forms to user
+* django-quill-editor==0.1.40 - editor provided to user when adding post content
+* django-resized==1.0.2  - resizes images provided by user to specific size
+
+Installed as dependencies with another packages:
+* gunicorn==21.2.0
+* oauthlib==3.2.2
+* PyJWT==2.8.0
+* python3-openid==3.2.0
+* sqlparse==0.4.4
+* urllib3==1.26.16
