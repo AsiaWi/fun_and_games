@@ -586,6 +586,16 @@ Each python file in this repo has been run through and each file received the sa
 
 ##### Negative Testing
 
+| FUNCTION      | ACTION                                                                                                                                                                            | EXPECTED                                                                                                | ACTUAL      |
+| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ----------- |
+| EDIT post     | 1.user tries to access URL to edit post but not logged in 2. user tries to access the url from different username                                                                 | 1.user directed to login page 2. user receives error 403                                                | as expected |
+| DELETE post   | 1.user tries to access URL to delete post but not logged in 2. user tries to access the url from different username                                                               | 1.user directed to login page 2. user receives error 403                                                | as expected |
+| SIGN-UP       | user doesn't fill in all required fields(username and password twice),user enters password twice but doesn't match, username enters too common password or less than 8 characters | user received a prompt with directions, sign up unsuccessful, user can enter details again              | as expected |
+| ADD POST form | user doesn't fill in all required fields( these are marked with \*)                                                                                                               | user receives a prompt to fill in the required field. form doesn't submit. user can enter details again | as expected |
+| COMMENT form  | user tried to submit empty comment form                                                                                                                                           | user receives prompt to fill in the form field, no submission present                                   | as expected |
+| SIGN-IN       | user doesn't fill in all required fields(username and password). user enters incorrect username or password                                                                       | user receives prompt why sign-in is unsuccessful and can enter details again                            | as expected |
+
+
 ### Automatic Testing
 
 #### Unit Testing
