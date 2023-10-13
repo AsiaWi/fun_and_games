@@ -84,7 +84,8 @@
                 <!-- A link provided by author will display IF provided -->
                 <div class="container bg-light">
                     {% if activity.link %}
-                    <span><a class="link-custom" href="{{activity.link}}">{{activity.link}}</a></span>
+                    <span><a class="link-custom" href="{{activity.link}}" target="_blank"
+                        title="Opens in new tab" aria-label="go to external link for more info">{{activity.link}}</a></span>
                     {% endif %}
                 </div>
                 <!-- COMMENT SECTION-->

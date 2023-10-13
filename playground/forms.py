@@ -18,7 +18,7 @@ class ActivityForm(forms.ModelForm):
             'featured_image': 'Add Image',
             'image_alt': 'Image Description',
             'content': 'Describe Activity',
-            'link': 'Can you leave a website link?',
+            'link': 'Can you leave a website link? | Please make sure it is correct so others can access it:)',
             'privacy': 'Publish post?'
         }
 
