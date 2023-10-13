@@ -126,6 +126,7 @@ All features have been implemented with user stories in mind
 
 #### Navigation menu
 ``USER STORY As a developer I need to create navigation menu so that a website user can easily navigate between pages``
+
 ![nav_bar_large_screens](docs/readme_img/nav_bar.png)
 
 ![nav_bar_small_screens](docs/readme_img/nav_bar_small_screens.png)
@@ -500,3 +501,15 @@ For more details on how to fork the repo, in order to for example suggest any ch
 
 
 When you have fork to a repository you don't have access to files locally on your device, for this you will need to clone the forked repo.
+
+## Credits
+- [Receipe tutorial](https://www.youtube.com/watch?v=iYrFRi8GZOw&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&index=12)- used throughout to help me with the project. 
+- [Likes tutorial](https://dev.to/radualexandrub/how-to-add-like-unlike-button-to-your-django-blog-5gkg) - which I have used to add 'like' feature in my project
+- [Django messages](https://ordinarycoders.com/blog/article/django-messages-framework)- used to help me with adding messages to my project
+- [Active class for nav links](https://tekshinobi.com/setting-active-navbar-link-in-django-template/) - used to add active class in my nav links
+- [Rawpixel](https://www.rawpixel.com/) - Hero Image 
+- [Readme](https://github.com/Gareth-McGirr/Portfolio-Project-4-SizzleAndSteak/tree/main) - used for readme structure
+- [Worldtravellog](https://github.com/URiem/worldtravellog/tree/main) & [SizzleAndSteak](https://github.com/Gareth-McGirr/Portfolio-Project-4-SizzleAndSteak/tree/main) - have also been helpful with gathering my thoughts together to start and then as general help 
+- Stack Overflow and google which have been super helpful with django issues
+- Code Insitute's django material
+
