@@ -5,6 +5,7 @@ Fun & Games is an online portal where anyone can share and/or find interesting i
 ![mockup](docs/readme_img/mockup_techsini_screenshot.png)
 
 ## Table of Contents
+
 - [Fun & Games](#fun--games)
   - [Table of Contents](#table-of-contents)
 - [User Experience Design](#user-experience-design)
@@ -54,6 +55,7 @@ Fun & Games is an online portal where anyone can share and/or find interesting i
 ## The Strategy Plane
 
 ### Site Goals
+
 The site is aimed at anyone who wants to share an interesting and fun way to spend time. This could be anything from activity indoor, outdoor or great locations where you can book an experience with your family or friends.
 It is also aimed at people who are simply searching for insporation when they're lacking ideas on what to do wheter it's due to a burn out, change of location or a need to experience new and crazy things.
 
@@ -67,6 +69,7 @@ Project board has been used to help me with the process [PROJECT BOARD-link](htt
 ![PROJECT BOARD](docs/readme_img/project_board.png)
 
 #### Milestones
+
 - 1-Project setup:
    This was a first task without it I wouldn't be able to continue with any of the project features so it was necessary to set up a basic structure of the project following the user stories included in this milestone.
 - 2-Authentication:
@@ -81,6 +84,7 @@ Project board has been used to help me with the process [PROJECT BOARD-link](htt
    Absolutely necessary step to make sure the page is deployed with no erros and allows anyone access to all features.
 
 #### User Stories
+
  Each Milestone contains user stories allowing me to build up the project with small features:
 
 - Milestone 1- Project setup
@@ -136,9 +140,11 @@ Project board has been used to help me with the process [PROJECT BOARD-link](htt
 ## The Structure Plane
 
 ### Features
+
 All features have been implemented with user stories in mind 
 
 #### Navigation menu
+
 ``USER STORY As a developer I need to create navigation menu so that a website user can easily navigate between pages``
 
 ![nav_bar_large_screens](docs/readme_img/nav_bar.png)
@@ -160,6 +166,7 @@ All features have been implemented with user stories in mind
        - add entry (ADD POST)
 
 #### Home/Index Page
+
 `` USER STORY: As a developer I need to create a home page so that user knows what the page is about from the moment they enter it``
 
 ![home_page](docs/readme_img/home_page.png)
@@ -168,6 +175,7 @@ All features have been implemented with user stories in mind
 - The aim of the page is to keep anyone who just entered the page interested and encourage to explore it more
 
 #### Footer
+
 `` USER STORY: As a developer I need to create a footer so that I can include social media links``
 
 ![footer](docs/readme_img/footer.png)
@@ -176,6 +184,7 @@ All features have been implemented with user stories in mind
 - The aim of this is so that the user can see more of my work if interested. If the page was real and had it's own social media the aim wouuld be the same
 
 #### Sign-In/ Sign-Up/ Log-Out
+
 Implementing this user story allows users to login/out and sign-up
 
 `` USER STORY As a developer I need to setup allauth so that users can have an option of signing up to the website for more features``
@@ -193,6 +202,7 @@ Each of the following pages are accessible through the navigation menu as explai
 - The aim of these features is so that the page is more interactive and users have access to their own posts.
 
 #### Add Post
+
 `` USER STORY: As a user I can add a post so that I can share an interesting activity location with others``
 
 ![add_post](docs/readme_img/add_post.png)
@@ -209,6 +219,7 @@ Each of the following pages are accessible through the navigation menu as explai
 - The aim of this feature is so that they can share their own activities with others
 
 #### Edit Post
+
 `` USER STORY: As a user I can edit posts I have shared so that I can correct any errors or update if necessary``
 
 ![edit_post](docs/readme_img/edit_post.png)
@@ -219,6 +230,7 @@ Each of the following pages are accessible through the navigation menu as explai
  - The aim of this is so that is user makes any errors/ wants to update the post or simply changed mind and wants to change it from PUBLIC to PRIVATE (or the other way round)- they can update it here. 
 
  #### Delete Post 
+
  `` USER STORY: As a user I can delete previously shared post so that I can make sure no posts which are no longer relevant based on location or my interests are showing for others ``
 
  ![delete_post](docs/readme_img/delete_post.png)
@@ -232,6 +244,7 @@ Each of the following pages are accessible through the navigation menu as explai
  - The aim of this is for user to be able to delete any unwanted content 
 
  #### LIKES
+
  `` USER STORY: As a post owner I want others to have an option to leave a like under a post so that I know it has been helpful for others ``
 
  ![liked_post](docs/readme_img/liked.png)
@@ -243,6 +256,7 @@ Each of the following pages are accessible through the navigation menu as explai
    - Authorised user - if previously liked the post- solid heart icon will be shown- if clicked- the icon will change to hollow one and the number of likes will decrease by one.
   
 #### COMMENTS
+
 `` USER STORY: As a user I can add a comment to a post so that I can interact with others ``
 
  - As comments section is below the post, a link displaying a number of comments shows at the top of the post so that user can click on it and instead of scrolling down, the link will take a user to comments section. This helps if posts are long as it avoids a lot of scrolling.
@@ -277,6 +291,7 @@ Each of the following pages are accessible through the navigation menu as explai
  - The aim of this feature is to allow users to find activities shared by others 
 
 #### Profile Wall
+
 `` USER STORY: As a user I can go to a page to view only my entries so that I can easily access them if needed ``
 
 ![profile_wall](docs/readme_img/profile_wall.png)(update: I have changed Last updated to Created:)
@@ -287,6 +302,7 @@ Each of the following pages are accessible through the navigation menu as explai
 - If user hasn't posted anything yet - a message will be displayed informing them of this so that there is no confusion as to why the page is empty.
 
 #### Post Detail View
+
 `` USER STORY: As a user I can open the post so that I can view the full post and it's details ``
 
 ![detail_view](docs/readme_img/detail_view.png)
@@ -306,6 +322,7 @@ Each of the following pages are accessible through the navigation menu as explai
 
 
 #### Page Pagination
+
 `` USER STORY: As a user I can navigate between pages so that the pages aren't too chaotic and overloaded``
 
 ![page_pagination](docs/readme_img/page_pagination.png)
@@ -315,6 +332,7 @@ Each of the following pages are accessible through the navigation menu as explai
 
 
 #### Confirm Actions Messages
+
 `` USER STORY: As a user I can see confirmation messages when taking actions so that I know if they were successful or not``
 
 ![action_message](docs/readme_img/action_message.png)
@@ -329,6 +347,7 @@ Each of the following pages are accessible through the navigation menu as explai
   - post added
 
 #### Error Pages
+
 `` USER STORY: As a developer I need to implement 403 error page so that user can see it when unauthorised to view certain content ``
 
 `` USER STORY: As a developer I need to implement 404 error page so that user is notified when accessing a link that doesn't exist ``
@@ -379,6 +398,7 @@ All the user stories below have been implemented in order to be able to build up
 ### Wireframes
 
 ### Database design
+
 ![entity_relationship_diagram](docs/readme_img/entity_relationship_diagram.png)
 
 - The ER Diagram has been generated with DBeaver. 
@@ -387,7 +407,9 @@ All the user stories below have been implemented in order to be able to build up
   - The activity model also supports comments and likes
 
 ## The Surface Plane
+
 ### Design/ Colour-Scheme/ Font/ Images
+
 - The design of the page has been kept clean and simple with room to develop in the future. The clean design still makes it a visualy pleasant experience. 
 - The main/ hero image will hopefully bring happy emotions to user entering the page
 - Main colour used througout the page is blue extending the theme of the hero image.
@@ -395,9 +417,7 @@ All the user stories below have been implemented in order to be able to build up
 ## Technologies
 
 ### Tools and technologies
-* Balsamiq- used to create wireframes
-* Favicon.io - used to create favicon for the page
-* Font Awesome - used to add icons for the page
+
 * Visual Studio Code - used to develop the website
 * Github - used to host source code and deploy on Github Pages
 * Git- used to commit and push code 
@@ -408,17 +428,22 @@ All the user stories below have been implemented in order to be able to build up
 * Python - used as the main language to code the logic of the page
 * Django - framework used
 * Heroku - to deploy the app 
-* Tiny PNG- used to compress the size of background
-* WEBP CONVERTER -used to convert background image, https://cloudconvert.com/webp-converter
-* Wave Evaluation Tool- used for checking accessibility
-* Techsini.com- used for creating mockup image
-* W3C Validator- used for checking HTML and CSS for errors
-* jshint validator - used to check java script code for errors
-* dbeaver - used to generate the ER Diagram
+* [Balsamiq](https://balsamiq.com/wireframes/)- used to create wireframes
+* [Favicon](https://favicon.io/favicon-generator/) - used to create favicon for the page
+* [Font Awesome](https://fontawesome.com/) - used to add icons for the page
+* [Tiny PNG](https://tinypng.com/)- used to compress the size of background
+* [WEBP CONVERTER](https://cloudconvert.com/webp-converter) -used to convert background image, 
+* [Wave Evaluation Tool](https://wave.webaim.org/)- used for checking accessibility
+* [Techsini](https://techsini.com/multi-mockup/index.php)- used for creating mockup image
+* [W3C Validator](https://validator.w3.org/)- used for checking HTML and CSS for errors
+* [jshint Validator](https://jshint.com/) - used to check java script code for errors
+* [dbeaver](https://dbeaver.com/) - used to generate the ER Diagram
+* [css gradient](https://cssgradient.io/) - used for <main> background
 
 ### Imports
 
 #### Python packages
+
 * QuillField - used to provide an editor for user when adding post content
 * timezone - to display current time on comment submission
 * TemplateView, CreateView, ListView, DetailView, DeleteView, UpdateView - used to allow CRUD functionality
@@ -428,6 +453,7 @@ All the user stories below have been implemented in order to be able to build up
 * get_object_or_404: used to get specific object from database or raise 404 exception if not found
 
 #### External packages
+
 * cloudinary==1.34.0 - media managment cloudinary
 * dj3-cloudinary-storage==0.0.6 - cloudinary storage
 * dj-database-url==0.5.0  - Django utility allows to utilize DATABASE_URL environment variable to configure Django application
@@ -448,6 +474,7 @@ Installed as dependencies with another packages:
 * urllib3==1.26.16
 
 ## Testing
+
 ### Responsiveness
 
 Website has been checked for responsiveness through Development tools. In order to do this, the following steps have been taken:
@@ -467,6 +494,7 @@ Website has been checked for responsiveness through Development tools. In order 
     * Asus Vivobook
 
 ### Accessibility
+
 !!!!!!!!! check WAVE on quil!!!!!!!!!!!!!!!!1 to do
 
 Each page checked with the help of WAVE Accessibility tool (https://wave.webaim.org/). Each page passes accesibility test with no error for:
@@ -479,6 +507,7 @@ Each page checked with the help of WAVE Accessibility tool (https://wave.webaim.
 * an alert coming up 'Reduntant link-Adjacent links go to the same URL', however as it doesn't come up as an error, I have left it in' This is due to page logo and Home page having the same destination link.
 
 ### Lighthouse
+
 * HOME PAGE (desktop & mobile)
 
 ![lighthouse_desktop](docs/readme_img/lighthouse_desktop.png)
@@ -488,7 +517,9 @@ Each page checked with the help of WAVE Accessibility tool (https://wave.webaim.
 *  ADD ACTIVITY PAGE TO DO AFTER ISSUES WITH QUIL GET SORTED
 
 ### Validator Testing
+
 #### HTML
+
 #### CSS
 
 No errors were found when passing through the official Jigsaw W3 Validator
@@ -510,12 +541,16 @@ Each python file in this repo has been run through and each file received the sa
 ![python_validator_check](docs/readme_img/python_validator_check.png)
 
 ### Manual Testing
-#### Functional Testing
-##### Links and Buttons
-##### Negative Testing
-### Automatic Testing
-#### Unit Testing
 
+#### Functional Testing
+
+##### Links and Buttons
+
+##### Negative Testing
+
+### Automatic Testing
+
+#### Unit Testing
 
 ## Deployment
 
@@ -532,6 +567,7 @@ Each python file in this repo has been run through and each file received the sa
    ``git push`` - final command used to push commited code to remote repo on Github
    
 ### Deploying in Heroku 
+
 * The project has been deployed on Heroku as follows:
      * Use: ``pip freeze > requirements.txt`` to add external libraries to deployed app.
      * Create Heroku account ( step by step guide [here](https://coding-boot-camp.github.io/full-stack/heroku/deploy-with-heroku-and-mysql))
@@ -571,6 +607,7 @@ For more details on how to clone the remote repo in order to create a local copy
 
 
 ### FORKING
+
 1. On Github navigate to repository
 2. click "Fork" located towards the top right corner
 3. Select "owner" for the forked repo, from the dropdown menu under "owner" Under "Owner"
@@ -586,6 +623,7 @@ For more details on how to fork the repo, in order to for example suggest any ch
 When you have fork to a repository you don't have access to files locally on your device, for this you will need to clone the forked repo.
 
 ## Credits
+
 - [Receipe tutorial](https://www.youtube.com/watch?v=iYrFRi8GZOw&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&index=12)- used throughout to help me with the project. 
 - [Likes tutorial](https://dev.to/radualexandrub/how-to-add-like-unlike-button-to-your-django-blog-5gkg) - which I have used to add 'like' feature in my project
 - [Django messages](https://ordinarycoders.com/blog/article/django-messages-framework)- used to help me with adding messages to my project
