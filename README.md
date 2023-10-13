@@ -449,6 +449,23 @@ Installed as dependencies with another packages:
 
 ## Testing
 ### Responsiveness
+
+Website has been checked for responsiveness through Development tools. In order to do this, the following steps have been taken:
+1. Open browser
+2. Navigate to Fun & Games at https://fun-and-games-a99303d46c12.herokuapp.com/playground/
+3. Right click anywhere on the page and go to "Inspect" to open Development Tools
+4. Click on drop down menu: "Dimensions: Responsive" and choose "Responsive"
+5. Drag the side of the screen and change screen size, make sure the website looks good from 320px and up. Make sure no side 
+   scroll bar is showing.
+
+* Expected- page is user friendly when viewing the website on small and large screens.
+* Actual- website looks good, no bottom scroll bar showing, all content clearly visible. Website is user friendly on all screen sizes.
+
+* The following devices have been used to check responsiveness:
+    * Iphone 13 Pro
+    * Google Pixel 7 Pro 
+    * Asus Vivobook
+
 ### Accessibility
 ### Lighthouse
 ### Validator Testing
