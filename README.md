@@ -27,6 +27,20 @@ Fun & Games is an online portal where anyone can share and/or find interesting i
     - [Python Packages](#internal-packages)
     - [External Packages](#external-packages)
 - [Testing](#testing)
+  - [Responsiveness](#responsiveness)
+  - [Accessibility](#accessibility)
+  - [Lighthouse](#lighthouse)
+  - [Validator Testing](#validator-testing)
+    - [HTML](#html)
+    - [CSS](#css)
+    - [JavaScript](#javascript)
+    - [Python](#python)
+  - [Manual Testing](#manual-testing)
+    - [Functional Testing](#functional-testing)
+      - [Links and Buttons](#links-and-buttons)
+      - [Negative Testing](#negative-testing)
+  - [Automatic Testing](#automatic-testing)
+    - [Unit Tests](#unit-tests)
 - [Deployment](#deployment)
     - [Version Control](#version-control)
     - [Deploying in Heroku](#deploying-in-heroku)
@@ -388,6 +402,7 @@ All the user stories below have been implemented in order to be able to build up
 * Github - used to host source code and deploy on Github Pages
 * Git- used to commit and push code 
 * HTML - used to create main static content of the website
+* Bootstrap - front end framework used 
 * CSS- used for website styling
 * JavaScript- used to create dynamic content and make page interactive
 * Python - used as the main language to code the logic of the page
@@ -433,6 +448,21 @@ Installed as dependencies with another packages:
 * urllib3==1.26.16
 
 ## Testing
+### Responsiveness
+### Accessibility
+### Lighthouse
+### Validator Testing
+#### HTML
+#### CSS
+#### JavaScript
+#### Python
+### Manual Testing
+#### Functional Testing
+##### Links and Buttons
+##### Negative Testing
+### Automatic Testing
+#### Unit Testing
+
 
 ## Deployment
 
