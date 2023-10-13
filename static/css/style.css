@@ -102,7 +102,7 @@ a.custom-pagination {
 
 #banner-custom > h1 {
   font-weight: lighter;
-  font-size: 70%;
+  font-size: 100%;
   padding-top: 2%;
 }
 
@@ -132,6 +132,9 @@ a.comments-section-link {
   background-color: rgb(187, 180, 180);
 }
 
+a.link-custom {
+  color:black;
+}
 /* MEDIA QUERIES */
 
 /* for large screen sizes from 900px wide and up */

@@ -84,11 +84,11 @@
                 <!-- A link provided by author will display IF provided -->
                 <div class="container bg-light">
                     {% if activity.link %}
-                    <span><a href="{{activity.link}}">{{activity.link}}</a></span>
+                    <span><a class="link-custom" href="{{activity.link}}">{{activity.link}}</a></span>
                     {% endif %}
                 </div>
                 <!-- COMMENT SECTION-->
-                <!-- this div allows linking comments number at the top with click regardless of auth state -->
+                <!-- this div allows linking comments number at the top with a click regardless of auth state -->
                 <div id="comments-section">
                     <!-- authenticated user/ form displayed to leave a comment -->
                     {% if user.is_authenticated %}
