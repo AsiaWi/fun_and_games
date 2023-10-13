@@ -467,7 +467,24 @@ Website has been checked for responsiveness through Development tools. In order 
     * Asus Vivobook
 
 ### Accessibility
+!!!!!!!!! check WAVE on quil!!!!!!!!!!!!!!!!1 to do
+
+Each page checked with the help of WAVE Accessibility tool (https://wave.webaim.org/). Each page passes accesibility test with no error for:
+* contrast
+* aria- labels for users who use screen-readers
+* alternative text as a function for screen readers or in events when images don't load
+* structural elements - for users of assistive technology as well as visual and semantic meaning
+* language of the document- for screen readers
+
+* an alert coming up 'Reduntant link-Adjacent links go to the same URL', however as it doesn't come up as an error, I have left it in' This is due to page logo and Home page having the same destination link.
+
 ### Lighthouse
+* HOME PAGE (desktop & mobile)
+
+![lighthouse_desktop](docs/readme_img/lighthouse_desktop.png)
+
+![lighthouse_mobile](docs/readme_img/lighthouse_mobile.png)
+
 ### Validator Testing
 #### HTML
 #### CSS
