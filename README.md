@@ -564,7 +564,7 @@ Each python file in this repo has been run through and each file received the sa
 
 ##### Links and Buttons
 
-| BUTTON/ANCHOR LINK | LOCATION                                                  | DESTINATION PAGE                                                                                                                                                   | PAGE OPENS IN NEW TAB                |
+| BUTTON/ANCHOR LINK/ LOCATION                                                   | DESTINATION PAGE                                                                                                                                                   | PAGE OPENS IN NEW TAB                |
 | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------ |
 | Fun&Games' logo-nav bar                                                        | index.html                                                                                                                                                         | no-as expected                       |
 | HOME'- nav bar                                                                 | index.html                                                                                                                                                         | no-as expected                       |
@@ -577,13 +577,12 @@ Each python file in this repo has been run through and each file received the sa
 | SIGN-IN- nav bar (unauthorised users only)                                     | login.html                                                                                                                                                         | no-as expected                       |
 | Commented: (no. of comments)' link from view_activity_details.html             | scrolls down to comments section below posts                                                                                                                       | no-as expected                       |
 | SIGN-IN -comments section, view_activity_details.html(unauthorised users only) | login.html                                                                                                                                                         | no-as expected                       |
-| GITHUB ICON- footer                                                            | [https://github.com/AsiaWi](https://github.com/AsiaWi)                                                                                                             | yes-as expected                      |
-| LINKEDIN ICON- footer                                                          | [https://www.linkedin.com/in/joanna-witek-51017b263/](https://www.linkedin.com/in/joanna-witek-51017b263/)                                                         | yes-as expected                      |
-| LINK provided by user within their posts                                       | this will only work correctly if user submits the post with correct link. I have added a message within the form for user to pay attention if the link is correct. | yes-as expected (if link is correct) |
 | EDIT- view_activity_details.html(on users own posts only)                      | edit_activity.html                                                                                                                                                 | no-as expected                       |
 | DELETE- viw_activity_details.html(on users own posts only)                     | activity_confirm_delete.html                                                                                                                                       | no-as expected                       |
 | LIKE -view_activity_details.html(when unauthorised)                            | login.html                                                                                                                                                         | no-as expected                       |
-
+| GITHUB ICON- footer                                                            |                                                                                                                                                                    | yes-as expected                      |
+| LINKEDIN ICON- footer                                                          |                                                                                                                                                                    | yes-as expected                      |
+| LINK provided by user within their posts                                       | this will only work correctly if user submits the post with correct link. I have added a message within the form for user to pay attention if the link is correct. | yes-as expected (if link is correct) |
 ##### Negative Testing
 
 ### Automatic Testing
