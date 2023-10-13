@@ -100,6 +100,12 @@ a.custom-pagination {
   height: fit-content;
 }
 
+#banner-custom > h1 {
+  font-weight: lighter;
+  font-size: 70%;
+  padding-top: 2%;
+}
+
 /* VIEW_ACTIVITY_DETAILS.HTML styling */
 a.btn-custom {
   height: 40px;
