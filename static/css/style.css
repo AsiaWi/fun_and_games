@@ -100,7 +100,7 @@ a.custom-pagination {
   height: fit-content;
 }
 
-#banner-custom > h1 {
+#banner-custom>h1 {
   font-weight: lighter;
   font-size: 100%;
 }
@@ -132,8 +132,9 @@ a.comments-section-link {
 }
 
 a.link-custom {
-  color:black;
+  color: black;
 }
+
 /* MEDIA QUERIES */
 
 /* for large screen sizes from 900px wide and up */
@@ -155,9 +156,8 @@ a.link-custom {
 }
 
 /* for medium to large screen sizes from 700px wide and up */
-@media screen and (min-width: 768px){
-  a.btn-custom{
+@media screen and (min-width: 768px) {
+  a.btn-custom {
     width: 50%;
   }
 }
-

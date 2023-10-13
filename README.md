@@ -485,11 +485,30 @@ Each page checked with the help of WAVE Accessibility tool (https://wave.webaim.
 
 ![lighthouse_mobile](docs/readme_img/lighthouse_mobile.png)
 
+*  ADD ACTIVITY PAGE TO DO AFTER ISSUES WITH QUIL GET SORTED
+
 ### Validator Testing
 #### HTML
 #### CSS
+
+No errors were found when passing through the official Jigsaw W3 Validator
+
+![css_validator_check](docs/readme_img/css_validator_check.png)
+
 #### JavaScript
+
+No errors were found when passing through the [jshint validator](https://jshint.com/)
+
+![javascript_validator_check](docs/readme_img/javascript_validator_check.png)
+
 #### Python
+
+No errors shows when passing each file through [CI Python Linter](https://pep8ci.herokuapp.com/)
+
+Each python file in this repo has been run through and each file received the same success message:
+
+![python_validator_check](docs/readme_img/python_validator_check.png)
+
 ### Manual Testing
 #### Functional Testing
 ##### Links and Buttons

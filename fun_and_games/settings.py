@@ -42,25 +42,15 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-      #cloudinary
-    'cloudinary_storage',
+    'cloudinary_storage',  # cloudinary
     'django.contrib.staticfiles',
-    'cloudinary',
-
-    
-    'django.contrib.sites', #allauth
-
-    # Apps
-    'playground',
-
-  
-
-    #allauth
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
-
-    'django_quill',
+    'cloudinary',  # cloudinary
+    'django.contrib.sites',  # allauth
+    'playground',  # Apps
+    'allauth',  # allauth
+    'allauth.account',  # allauth
+    'allauth.socialaccount',  # allauth
+    'django_quill',  # quils editor
     'crispy_forms'
 ]
 
@@ -93,7 +83,8 @@ TEMPLATES = [
     },
 ]
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
- #allauth
+
+# allauth
 
 SITE_ID = 1
 
@@ -117,12 +108,12 @@ MESSAGE_TAGS = {
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-#DATABASES = {
+# DATABASES = {
 #    'default': {
 #        'ENGINE': 'django.db.backends.sqlite3',
 #        'NAME': BASE_DIR / 'db.sqlite3',
 #    }
-#}
+# }
 
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
@@ -132,16 +123,20 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': 'django.contrib.auth.password_validation.
+        UserAttributeSimilarityValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': 'django.contrib.auth.password_validation.
+        MinimumLengthValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.
+        CommonPasswordValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.
+        NumericPasswordValidator',
     },
 ]
 
@@ -162,7 +157,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+STATICFILES_STORAGE = 'cloudinary_storage.storage.
+StaticHashedCloudinaryStorage'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
