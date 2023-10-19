@@ -48,21 +48,22 @@
                                 {% csrf_token %}
                                 <!-- solid heart icon if user liked post -->
                                 {% if activity_liked %}
-                                <button class="btn bg-transparent p-0" type="submit" name="activity_id" value="{{object.id}}"
-                                    style="border: 0 !important; color:rgb(82, 82, 238)" aria-label="unlike the post"><i
-                                        class="fa-solid fa-heart"></i></button>
+                                <button class="btn bg-transparent p-0" type="submit" name="activity_id"
+                                    value="{{object.id}}" style="border: 0 !important; color:rgb(82, 82, 238)"
+                                    aria-label="unlike the post"><i class="fa-solid fa-heart"></i></button>
                                 {% else %}
                                 <!-- hollow heart icon if user didn't like the post yet -->
-                                <button class="btn bg-transparent p-0" type="submit" name="activity_id" value="{{object.id}}"
-                                    style="border: 0 !important; color:rgb(82, 82, 238)" aria-label="like the post"><i
-                                        class="fa-regular fa-heart"></i></button>
+                                <button class="btn bg-transparent p-0" type="submit" name="activity_id"
+                                    value="{{object.id}}" style="border: 0 !important; color:rgb(82, 82, 238)"
+                                    aria-label="like the post"><i class="fa-regular fa-heart"></i></button>
                                 {% endif %}
                             </form>
                             {% else %}
                             <!-- if user not authenticated- hollow icon will link to login page on click /
                             once logged in -user taken back to the post-->
                             <a href="{% url 'account_login' %}?next={{ request.get_full_path }}"
-                                aria-label="sign in and like the post" style="color:rgb(82, 82, 238)"><i class="fa-regular fa-heart"></i> </a><br>
+                                aria-label="sign in and like the post" style="color:rgb(82, 82, 238)"><i
+                                    class="fa-regular fa-heart"></i> </a><br>
                             {% endif %}
                         </div>
                         <!-- a number of likes against the post -->
@@ -84,8 +85,8 @@
                 <!-- A link provided by author will display IF provided -->
                 <div class="container bg-light">
                     {% if activity.link %}
-                    <span><a class="link-custom" href="{{activity.link}}" target="_blank"
-                        title="Opens in new tab" aria-label="go to external link for more info">{{activity.link}}</a></span>
+                    <span><a class="link-custom" href="{{activity.link}}" target="_blank" title="Opens in new tab"
+                            aria-label="go to external link for more info">{{activity.link}}</a></span>
                     {% endif %}
                 </div>
                 <!-- COMMENT SECTION-->
@@ -137,18 +138,19 @@
             <div class="d-grid gap-2 col-4 mx-auto">
                 <div>
                     <!-- Button to edit post -->
-                    <a href="{% url 'edit_activity' activity_id=activity.id %}"
-                        class="btn btn-custom" style="background-color: rgb(109, 242, 204);">Edit</a>
+                    <a href="{% url 'edit_activity' activity_id=activity.id %}" class="btn btn-custom"
+                        style="background-color: rgb(109, 242, 204);">Edit</a>
                     <!-- Button to delete post -->
-                    <a href="{% url 'activity_confirm_delete' activity_id=activity.id %}"
-                        class="btn-custom btn" style="background-color: rgb(239, 129, 129);">Delete</a>
+                    <a href="{% url 'activity_confirm_delete' activity_id=activity.id %}" class="btn-custom btn"
+                        style="background-color: rgb(239, 129, 129);">Delete</a>
                 </div>
-                {% endif %}
             </div>
+            {% endif %}
+        </div>
 
-        
+
+
+
     </div>
-    
-</div>
 
     {% endblock content %}
