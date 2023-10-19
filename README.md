@@ -592,11 +592,45 @@ Each page checked with the help of WAVE Accessibility tool (https://wave.webaim.
 
 ![lighthouse_mobile](docs/readme_img/lighthouse_mobile.png)
 
-*  ADD ACTIVITY PAGE TO DO AFTER ISSUES WITH QUIL GET SORTED
+*  ACTIVITIES list view (desktop & mobile)
+
+![lighthouse_desktop_list_view](docs/readme_img/lighthouse_desktop_activities_list_view.png)
+
+![lighthouse_mobile_list_view](docs/readme_img/lighthouse_mobile_activities_list_view.png)
+
+* VIEW POST DETAILS page (desktop & mobile)
+
+![lighthouse_desktop_detail_view](docs/readme_img/lighthouse_desktop_view_post_details.png)
+
+![lighthouse_mobile_detail_view](docs/readme_img/lighthouse_mobile_view_post_details.png)
+
+* ADD POST (desktop & mobile)
+
+to be added when issues with this page get sorted
+
 
 ### Validator Testing
 
 #### HTML
+
+All pages have been run through the [W3C VALIDATOR](https://validator.w3.org/).
+
+In order to check HTML code in dynamic website:
+
+* go to the live page
+* click right and select 'Inspect' then click right and select 'View page source'
+* code will open in new tab - copy the code
+* paste the code in the validator as 'direct input'
+
+All pages have passed the check:
+* Home page (index.html)
+* Activities list view (activities.html)
+* Sign-in, sign-out, log-out pages
+* Profile Wall page (profile_wall.html)
+* Confirm post deletion page (activity_confirm_delete.html)
+* Post detail view, own posts(when edit and delete show) and others (view_activity_details.html)
+
+ADD POST AND EDIT POST COME UP WITH ERROR WILL BE FIXED AND ADDED TO THE LIST
 
 #### CSS
 
