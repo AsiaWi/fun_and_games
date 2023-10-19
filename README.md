@@ -431,7 +431,7 @@ All the user stories below have been implemented in order to be able to build up
 
 ![sign_up_page_desktop_wireframe_unauthorised_user](docs/readme_img/signup_template_desktop_unauthorised_user_wireframe.png)
 
-![sign_in_page_desktop_wireframe_unauthorised_user](docs/readme_img/_signin_template_desktop_unauthorised_user_wireframe.png)
+![sign_in_page_desktop_wireframe_unauthorised_user](docs/readme_img/signin_template_desktop_unauthorised_user_wireframe.png)
 
 ##### LOGOUT authorised user only
 
@@ -441,37 +441,37 @@ All the user stories below have been implemented in order to be able to build up
 
 ##### HOME PAGE authorised user/ unauthorised user
 
-![home_page_desktop_wireframe_authorised_user](docs/readme_img/index_html_mobile_authorised_user_wireframe.png)
+![home_page_mobile_wireframe_authorised_user](docs/readme_img/index_html_mobile_authorised_user_wireframe.png)
 
-![home_page_desktop_wireframe_unauthorised_user](docs/readme_img/index_html_mobile_unauthorised_user_wireframe.png)
+![home_page_mobile_wireframe_unauthorised_user](docs/readme_img/index_html_mobile_unauthorised_user_wireframe.png)
 
 ##### ACTIVITIES LIST VIEW authorised user/ unauthorised user
 
-![activities_page_desktop_wireframe_authorised_user](docs/readme_img/activities_html_authorised_authorised_user_wireframe.png)
+![activities_page_mobile_wireframe_authorised_user](docs/readme_img/activities_html_mobile_authorised_and_unauthorised_user_wireframe.png)
 
 ##### VIEW POST DETAILS authorised user/ unauthorised user
 
-![view_post_detail_page_desktop_wireframe_authorised_user](docs/readme_img/view_post_detail_html_mobile_authorised_user_wireframe.png)
+![view_post_detail_page_mobile_wireframe_authorised_user](docs/readme_img/view_post_detail_html_mobile_authorised_user_wireframe.png)
 
-![view_post_detail_page_desktop_wireframe_unauthorised_user](docs/readme_img/view_post_detail_html_mobile_unauthorised_user_wireframe.png)
+![view_post_detail_page_mobile_wireframe_unauthorised_user](docs/readme_img/view_post_detail_html_mobile_unauthorised_user_wireframe.png)
 
 ##### PROFILE WALL authorised user only
 
-![profile_wall_page_desktop_wireframe_authorised_user](docs/readme_img/profile_wall_html_mobile_authorised_user_wireframe.png)
+![profile_wall_page_mobile_wireframe_authorised_user](docs/readme_img/profile_wall_html_mobile_authorised_user_wireframe.png)
 
 ##### ADD ACTIVITY authorised user only
 
-![add_activity_page_desktop_wireframe_authorised_user](docs/readme_img/add_activity_html_mobile_authorised_user_wireframe.png)
+![add_activity_page_mobile_wireframe_authorised_user](docs/readme_img/add_activity_html_mobile_authorised_user_wireframe.png)
 
 ##### SIGN-UP, SIGN-IN unauthorised user only
 
-![sign_up_page_desktop_wireframe_unauthorised_user](docs/readme_img/signup_template_mobile_unauthorised_user_wireframe.png)
+![sign_up_page_mobile_wireframe_unauthorised_user](docs/readme_img/signup_template_mobile_unauthorised_user_wireframe.png)
 
-![sign_in_page_desktop_wireframe_unauthorised_user](docs/readme_img/_signin_template_mobile_unauthorised_user_wireframe.png)
+![sign_in_page_mobile_wireframe_unauthorised_user](docs/readme_img/signin_template_mobile_unauthorised_user_wireframe.png)
 
 ##### LOGOUT authorised user only
 
-![logout_page_desktop_wireframe_authorised_user](docs/readme_img/logout_template_mobile_authorised_user_wireframe.png)
+![logout_page_mobile_wireframe_authorised_user](docs/readme_img/logout_template_mobile_authorised_user_wireframe.png)
 
 
 ### Database design
