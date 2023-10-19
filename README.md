@@ -19,6 +19,8 @@ Fun & Games is an online portal where anyone can share and/or find interesting i
     - [Features Left To Implement](#features-left-to-implement)
   - [The Skeleton Plane](#the-skeleton-plane)
     - [Wireframes](#wireframes)
+      - [Desktop](#desktop)
+      - [Mobile](#mobile)
     - [Database Design](#database-design)
   - [The Surface Plane](#the-surface-plane)
     - [Design/ Colour-Scheme/ Font/ Images](#design-colour-scheme-font-images)
@@ -397,6 +399,81 @@ All the user stories below have been implemented in order to be able to build up
 
 ### Wireframes
 
+#### Desktop
+
+##### HOME PAGE authorised user/ unauthorised user
+
+![home_page_desktop_wireframe_authorised_user](docs/readme_img/index_html_desktop_authorised_user_wireframe.png)
+
+![home_page_desktop_wireframe_unauthorised_user](docs/readme_img/index_html_desktop_unauthorised_user_wireframe.png)
+
+##### ACTIVITIES LIST VIEW authorised user/ unauthorised user
+
+![activities_page_desktop_wireframe_authorised_user](docs/readme_img/activities_html_desktop_authorised_user_wireframe.png)
+
+![activities_page_desktop_wireframe_unauthorised_user](docs/readme_img/activities_html_desktop_unauthorised_user_wireframe.png)
+
+##### VIEW POST DETAILS authorised user/ unauthorised user
+
+![view_post_detail_page_desktop_wireframe_authorised_user](docs/readme_img/view_post_detail_html_desktop_authorised_user_wireframe.png)
+
+![view_post_detail_page_desktop_wireframe_unauthorised_user](docs/readme_img/view_post_detail_html_desktop_unauthorised_user_wireframe.png)
+
+##### PROFILE WALL authorised user only
+
+![profile_wall_page_desktop_wireframe_authorised_user](docs/readme_img/profile_wall_html_desktop_authorised_user_wireframe.png)
+
+##### ADD ACTIVITY authorised user only
+
+![add_activity_page_desktop_wireframe_authorised_user](docs/readme_img/add_activity_html_desktop_authorised_user_wireframe.png)
+
+##### SIGN-UP, SIGN-IN unauthorised user only
+
+![sign_up_page_desktop_wireframe_unauthorised_user](docs/readme_img/signup_template_desktop_unauthorised_user_wireframe.png)
+
+![sign_in_page_desktop_wireframe_unauthorised_user](docs/readme_img/_signin_template_desktop_unauthorised_user_wireframe.png)
+
+##### LOGOUT authorised user only
+
+![logout_page_desktop_wireframe_authorised_user](docs/readme_img/logout_template_desktop_authorised_user_wireframe.png)
+
+#### Mobile
+
+##### HOME PAGE authorised user/ unauthorised user
+
+![home_page_desktop_wireframe_authorised_user](docs/readme_img/index_html_mobile_authorised_user_wireframe.png)
+
+![home_page_desktop_wireframe_unauthorised_user](docs/readme_img/index_html_mobile_unauthorised_user_wireframe.png)
+
+##### ACTIVITIES LIST VIEW authorised user/ unauthorised user
+
+![activities_page_desktop_wireframe_authorised_user](docs/readme_img/activities_html_authorised_authorised_user_wireframe.png)
+
+##### VIEW POST DETAILS authorised user/ unauthorised user
+
+![view_post_detail_page_desktop_wireframe_authorised_user](docs/readme_img/view_post_detail_html_mobile_authorised_user_wireframe.png)
+
+![view_post_detail_page_desktop_wireframe_unauthorised_user](docs/readme_img/view_post_detail_html_mobile_unauthorised_user_wireframe.png)
+
+##### PROFILE WALL authorised user only
+
+![profile_wall_page_desktop_wireframe_authorised_user](docs/readme_img/profile_wall_html_mobile_authorised_user_wireframe.png)
+
+##### ADD ACTIVITY authorised user only
+
+![add_activity_page_desktop_wireframe_authorised_user](docs/readme_img/add_activity_html_mobile_authorised_user_wireframe.png)
+
+##### SIGN-UP, SIGN-IN unauthorised user only
+
+![sign_up_page_desktop_wireframe_unauthorised_user](docs/readme_img/signup_template_mobile_unauthorised_user_wireframe.png)
+
+![sign_in_page_desktop_wireframe_unauthorised_user](docs/readme_img/_signin_template_mobile_unauthorised_user_wireframe.png)
+
+##### LOGOUT authorised user only
+
+![logout_page_desktop_wireframe_authorised_user](docs/readme_img/logout_template_mobile_authorised_user_wireframe.png)
+
+
 ### Database design
 
 ![entity_relationship_diagram](docs/readme_img/entity_relationship_diagram.png)
@@ -599,6 +676,8 @@ Each python file in this repo has been run through and each file received the sa
 ### Automatic Testing
 
 #### Unit Testing
+
+No unit testing performed at this stage. 
 
 ## Deployment
 
