@@ -357,7 +357,7 @@ Each of the following pages are accessible through the navigation menu as explai
 `` USER STORY: As a developer I need to implement error 500 page ** so that user gets notified in case of an internal error``
 
 ![404_error](docs/readme_img/404_error.png)
-![403_error](docs/readme_img/404_error.png)
+![403_error](docs/readme_img/403_error.png)
 
 - This feature communicates to the user what went wrong and gives option to go back to home page
 - The aim of this feature is to inform the user of an error taking place with a short descriptive message and helps the user find a way back to our page
