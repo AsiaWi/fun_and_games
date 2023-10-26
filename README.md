@@ -628,7 +628,7 @@ All pages have passed the check:
 * Sign-in, sign-out, log-out pages
 * Profile Wall page (profile_wall.html)
 * Confirm post deletion page (activity_confirm_delete.html)
-* Post detail view, own posts(when edit and delete show) and others (view_activity_details.html)
+* Post detail view, own posts(when edit and delete show) and [posts that belong to other users (view_activity_details.html)
 
 ADD POST AND EDIT POST COME UP WITH ERROR WILL BE FIXED AND ADDED TO THE LIST
 
