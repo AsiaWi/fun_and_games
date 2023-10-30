@@ -609,7 +609,10 @@ Each page checked with the help of WAVE Accessibility tool (https://wave.webaim.
 
 * ADD POST (desktop & mobile)
 
-to be added when issues with this page get sorted
+![lighthouse_desktop_add_post](docs/readme_img/lighthouse_desktop_add_post.png)
+
+![lighthouse_mobile_add_post](docs/readme_img/lighthouse_mobile_add_post.png)
+
 
 
 ### Validator Testing

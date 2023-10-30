@@ -40,6 +40,17 @@
     document.addEventListener("DOMContentLoaded", function () {
         let changeInputId = document.getElementById('quill-input-id_content');
         changeInputId.id = 'id_content';
+        // change of type attribute from hidden, this runs correct when run through WAVE for accesibility
+        // however still shows as type=hidden in html validator
+        changeInputId.setAttribute("type", "text");
+        changeInputId.style.position = 'absolute';
+        changeInputId.style.width = '1px';
+        changeInputId.style.height = '1px';
+        changeInputId.style.margin = '-1px';
+        changeInputId.style.padding = '0';
+        changeInputId.style.overflow = 'hidden';
+        changeInputId.style.clip = 'rect(0, 0, 0, 0)';
+        changeInputId.style.border = '0';
     });
 
     // select 'select' element and add + associate a label with it
