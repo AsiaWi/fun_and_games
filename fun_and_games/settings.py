@@ -124,19 +124,19 @@ DATABASES = {
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.'
-        'UserAttributeSimilarityValidator',
+                'UserAttributeSimilarityValidator',
     },
     {
         'NAME': 'django.contrib.auth.password_validation.'
-        'MinimumLengthValidator',
+                'MinimumLengthValidator',
     },
     {
         'NAME': 'django.contrib.auth.password_validation.'
-        'CommonPasswordValidator',
+                'CommonPasswordValidator',
     },
     {
         'NAME': 'django.contrib.auth.password_validation.'
-        'NumericPasswordValidator',
+                'NumericPasswordValidator',
     },
 ]
 
@@ -158,7 +158,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'cloudinary_storage.storage.'
-'StaticHashedCloudinaryStorage'
+                      'StaticHashedCloudinaryStorage'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
