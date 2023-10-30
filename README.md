@@ -578,8 +578,6 @@ Website has been checked for responsiveness through Development tools. In order 
 
 ### Accessibility
 
-!!!!!!!!! check WAVE on quil!!!!!!!!!!!!!!!!1 to do
-
 Each page checked with the help of WAVE Accessibility tool (https://wave.webaim.org/). Each page passes accesibility test with no error for:
 * contrast
 * aria- labels for users who use screen-readers
