@@ -729,12 +729,21 @@ No unit testing performed at this stage.
 
 ## Bugs
 
+### HTML validation
 The following pages come up with an error which I wasn't able to fix, I have changed the value of attribute 'type' from 'hidden' to 'text' and then made it visually hidden all with Javascript code, This now shows correctly when checking code in WAVE tool but still remains the same when viewing 'view page source' and running it through validator. This error is due to using ``django_quill.fields`` and I wasn't able to find a solution to fix this.
 
 * add_activity.html
 * edit_activity.html
 
 ![html_validator_check](docs/readme_img/html_validator_check.png)
+
+### Console warnings
+
+There is a warning and one improvement message shown in console which again is due to the ``quill.fields``
+
+![console_warnings](docs/readme_img/console_warnings.png)
+
+I was unable to fix those and as they don't affect the way page works I have left these in. According to [this page](https://developer.chrome.com/blog/mutation-events-deprecation/#how-to-migrate), which talks about the warning the change won't take place until July2024 so shouldn't affect the page until then.
 
 ## Deployment
 
