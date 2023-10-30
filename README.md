@@ -359,10 +359,10 @@ Each of the following pages are accessible through the navigation menu as explai
 
 ![404_error](docs/readme_img/404_error.png)
 ![403_error](docs/readme_img/403_error.png)
+![500_error](docs/readme_img/500_error.png)
 
 - This feature communicates to the user what went wrong and gives option to go back to home page
 - The aim of this feature is to inform the user of an error taking place with a short descriptive message and helps the user find a way back to our page
-(error 500 has been designed in exactly the same way as the other ones)
 
 #### PROJECT SETUP/ FINAL TASKS
 
