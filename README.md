@@ -657,6 +657,11 @@ Each python file in this repo has been run through and each file received the sa
 
 ![python_validator_check](docs/readme_img/python_validator_check.png)
 
+Couple warnings when running settings.py file. Too long lines of code. I tried multiple ways to split the lines but unable to deploy then. Warnings shown:
+
+![python_validator_check_warnings](docs/readme_img/python_validator_check_warnings.png)
+
+
 ### Manual Testing
 
 #### Functional Testing
