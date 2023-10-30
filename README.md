@@ -101,8 +101,8 @@ Project board has been used to help me with the process [PROJECT BOARD-link](htt
      - database - ElephantSQL
      - Settings.py edited to notify django of the supporting libraries
      - Project deployed to Heroku
-  - As a developer I need to add static files so that *the website is user friendly
-  - As a developer I need to **create base.html file ** so that I have a basic structure of the page for the project
+  - As a developer I need to add static files so that the website is user friendly
+  - As a developer I need to create base.html file so that I have a basic structure of the page for the project
   - As a developer I need to create navigation menu so that a website user can easily navigate between pages
      - Home - for all users
      - SignUp - for unauthorised users
@@ -131,9 +131,9 @@ Project board has been used to help me with the process [PROJECT BOARD-link](htt
   - As a user I can navigate between pages so that the pages aren't too chaotic and overloaded
   - As a developer I can style the signup/login/logout pages in order to improve UI/UX 
   - As a user I can see confirmation messages when taking actions so that I know if they were successful or not
-  - As a developer I need to implement 403 error page so that **user can see it when unauthorised to view certain content 
+  - As a developer I need to implement 403 error page so that user can see it when unauthorised to view certain content 
   - As a developer I need to implement 404 error page so that user is notified when accessing a link that doesn't exist
-  - As a developer I need to implement error 500 page ** so that user gets notified in case of an internal error
+  - As a developer I need to implement error 500 page  so that user gets notified in case of an internal error
 - 5-Documentation:
   - As a developer I need to create readme.md file so that the project is supported by good documentation
 - 6-Final deployment:
@@ -354,7 +354,7 @@ Each of the following pages are accessible through the navigation menu as explai
 
 `` USER STORY: As a developer I need to implement 404 error page so that user is notified when accessing a link that doesn't exist ``
 
-`` USER STORY: As a developer I need to implement error 500 page ** so that user gets notified in case of an internal error``
+`` USER STORY: As a developer I need to implement error 500 page so that user gets notified in case of an internal error``
 
 ![404_error](docs/readme_img/404_error.png)
 ![403_error](docs/readme_img/403_error.png)
@@ -379,9 +379,9 @@ All the user stories below have been implemented in order to be able to build up
      - Settings.py edited to notify django of the supporting libraries
      - Project deployed to Heroku ``
      
-`` As a developer I need to add static files so that *the website is user friendly``
+`` As a developer I need to add static files so that the website is user friendly``
 
-`` As a developer I need to **create base.html file ** so that I have a basic structure of the page for the project``
+`` As a developer I need to **create base.html file so that I have a basic structure of the page for the project``
 
 `` As a developer I need to implement a superuser so that I can manage the website``
 
@@ -749,9 +749,9 @@ No unit testing performed at this stage.
      * Go to 'settings' tab, it's important you do it before deployment
      * Scroll down to 'config vars' section and key:
         - PORT and value: 8000
-        - CLOUDINARY_URL: ''
-        - DATABASE_URL : ''
-        - SECRET_KEY: ''
+        - CLOUDINARY_URL: 'API key to your cloudinary account'
+        - DATABASE_URL : 'URL from your database account'
+        - SECRET_KEY: 'Generate your own secret key'
      * Scroll down to 'Buildpacks' section
      * Click 'Add buildpack'
      * Add Python as first dependency and select 'Save changes'

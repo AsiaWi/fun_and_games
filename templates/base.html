@@ -40,6 +40,7 @@
     <!-- Footer -->
     {% include 'includes/footer.html' %}
     <!-- JS code -->
+    {% block extra_js %}
     <script>
         // Code from code institute walkthrough, if statement added to get rid off console error
         setTimeout(function () {
@@ -51,6 +52,7 @@
         }, 3000);
         
     </script>
+    {% endblock %}
 
 </body>
 

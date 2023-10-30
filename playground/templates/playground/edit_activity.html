@@ -6,14 +6,31 @@
 {% load crispy_forms_tags %}
 <div class="container">
     <!-- enctype needed to upload media to cloudinary -->
-    <form method="POST" enctype="multipart/form-data" class=" form"> 
-       <h1>Edit your post here!</h1> 
-       {% csrf_token %}
-       {{ form.media }}
-       {{ form | crispy }}
-       <div>
-        <button type="submit" class="btn btn-dark">Submit</button>
-       </div>
+    <form method="POST" enctype="multipart/form-data" class=" form">
+        <h1>Edit your post here!</h1>
+        {% csrf_token %}
+        {{ form.media }}
+        {{ form | crispy }}
+        <div>
+            <button type="submit" class="btn btn-dark">Submit</button>
+        </div>
     </form>
 </div>
 {% endblock content %}
+
+{% block extra_js %}
+{{block.super}}
+<!-- Set aria-labels for the quils editor for accessibility -->
+<script>
+    document.querySelector('.ql-clean').setAttribute("aria-label", "Clean_text_button");
+    document.querySelector('.ql-video').setAttribute("aria-label", "Video_button");
+    document.querySelector('.ql-image').setAttribute("aria-label", "Image_button");
+    document.querySelector('.ql-blockquote').setAttribute("aria-label", "Blockquote_text_button");
+    document.querySelector('.ql-strike').setAttribute("aria-label", "Strike_text_button");
+    document.querySelector('.ql-underline').setAttribute("aria-label", "Underline_text_button");
+    document.querySelector('.ql-italic').setAttribute("aria-label", "Italic_text_button");
+    document.querySelector('.ql-link').setAttribute("aria-label", "Link_button");
+    document.querySelector('.ql-code-block').setAttribute("aria-label", "Code_block_button");
+    document.querySelector('.ql-bold').setAttribute("aria-label", "Bold_text_button");
+</script>
+{% endblock %}
