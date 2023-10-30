@@ -21,6 +21,7 @@
 
 {% block extra_js %}
 {{block.super}}
+<!-- Set aria-labels for the quils editor for accessibility -->
 <script>
     document.querySelector('.ql-clean').setAttribute("aria-label", "Clean_text_button");
     document.querySelector('.ql-video').setAttribute("aria-label", "Video_button");
@@ -32,5 +33,100 @@
     document.querySelector('.ql-link').setAttribute("aria-label", "Link_button");
     document.querySelector('.ql-code-block').setAttribute("aria-label", "Code_block_button");
     document.querySelector('.ql-bold').setAttribute("aria-label", "Bold_text_button");
+    document.querySelector('.ql-preview').innerHTML = 'Type your link here!';
+    document.querySelector('[data-formula="e=mc^2"][data-link="https://quilljs.com"]').setAttribute("aria-label",
+        "link_preview");
+
+    // change input id to match with label's 'for' attribute
+    document.addEventListener("DOMContentLoaded", function () {
+        let changeInputId = document.getElementById('quill-input-id_content');
+        changeInputId.id = 'id_content';
+    });
+
+    // select 'select' element and add + associate a label with it
+    // font
+    let fontSelector = document.querySelector('select.ql-font');
+    fontSelector.id = 'font_selector';
+    document.getElementById('font_selector').setAttribute('aria-label', 'font_selector');
+    let createFontLabel = document.createElement('label');
+    createFontLabel.setAttribute('for', 'font_selector');
+    createFontLabel.textContent = 'select font';
+    createFontLabel.style.position = 'absolute';
+    createFontLabel.style.width = '1px';
+    createFontLabel.style.height = '1px';
+    createFontLabel.style.margin = '-1px';
+    createFontLabel.style.padding = '0';
+    createFontLabel.style.overflow = 'hidden';
+    createFontLabel.style.clip = 'rect(0, 0, 0, 0)';
+    createFontLabel.style.border = '0';
+    fontSelector.parentNode.insertBefore(createFontLabel, fontSelector);
+
+    // header
+    let headerSelector = document.querySelector('select.ql-header');
+    headerSelector.id = 'header_selector';
+    document.getElementById('header_selector').setAttribute('aria-label', 'header_selector');
+    let createHeaderLabel = document.createElement('label');
+    createHeaderLabel.setAttribute('for', 'header_selector');
+    createHeaderLabel.textContent = 'select header';
+    createHeaderLabel.style.position = 'absolute';
+    createHeaderLabel.style.width = '1px';
+    createHeaderLabel.style.height = '1px';
+    createHeaderLabel.style.margin = '-1px';
+    createHeaderLabel.style.padding = '0';
+    createHeaderLabel.style.overflow = 'hidden';
+    createHeaderLabel.style.clip = 'rect(0, 0, 0, 0)';
+    createHeaderLabel.style.border = '0';
+    headerSelector.parentNode.insertBefore(createHeaderLabel, headerSelector);
+
+    // align text
+    let alignSelector = document.querySelector('select.ql-align');
+    alignSelector.id = 'align_selector';
+    document.getElementById('align_selector').setAttribute('aria-label', 'align_selector');
+    let createAlignLabel = document.createElement('label');
+    createAlignLabel.setAttribute('for', 'align_selector');
+    createAlignLabel.textContent = 'align';
+    createAlignLabel.style.position = 'absolute';
+    createAlignLabel.style.width = '1px';
+    createAlignLabel.style.height = '1px';
+    createAlignLabel.style.margin = '-1px';
+    createAlignLabel.style.padding = '0';
+    createAlignLabel.style.overflow = 'hidden';
+    createAlignLabel.style.clip = 'rect(0, 0, 0, 0)';
+    createAlignLabel.style.border = '0';
+    alignSelector.parentNode.insertBefore(createAlignLabel, alignSelector);
+
+    // text color
+    let colorSelector = document.querySelector('select.ql-color');
+    colorSelector.id = 'color_selector';
+    document.getElementById('color_selector').setAttribute('aria-label', 'color_selector');
+    let createColorLabel = document.createElement('label');
+    createColorLabel.setAttribute('for', 'color_selector');
+    createColorLabel.textContent = 'select_color';
+    createColorLabel.style.position = 'absolute';
+    createColorLabel.style.width = '1px';
+    createColorLabel.style.height = '1px';
+    createColorLabel.style.margin = '-1px';
+    createColorLabel.style.padding = '0';
+    createColorLabel.style.overflow = 'hidden';
+    createColorLabel.style.clip = 'rect(0, 0, 0, 0)';
+    createColorLabel.style.border = '0';
+    colorSelector.parentNode.insertBefore(createColorLabel, colorSelector);
+
+    //  background color
+    let backgroundSelector = document.querySelector('select.ql-background');
+    backgroundSelector.id = 'background_selector';
+    document.getElementById('background_selector').setAttribute('aria-label', 'background_selector');
+    let createBackgroundLabel = document.createElement('label');
+    createBackgroundLabel.setAttribute('for', 'background_selector');
+    createBackgroundLabel.textContent = 'select_background_color';
+    createBackgroundLabel.style.position = 'absolute';
+    createBackgroundLabel.style.width = '1px';
+    createBackgroundLabel.style.height = '1px';
+    createBackgroundLabel.style.margin = '-1px';
+    createBackgroundLabel.style.padding = '0';
+    createBackgroundLabel.style.overflow = 'hidden';
+    createBackgroundLabel.style.clip = 'rect(0, 0, 0, 0)';
+    createBackgroundLabel.style.border = '0';
+    backgroundSelector.parentNode.insertBefore(createBackgroundLabel, backgroundSelector);
 </script>
 {% endblock %}
