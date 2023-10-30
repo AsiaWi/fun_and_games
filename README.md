@@ -44,6 +44,7 @@ Fun & Games is an online portal where anyone can share and/or find interesting i
       - [Negative Testing](#negative-testing)
   - [Automatic Testing](#automatic-testing)
     - [Unit Tests](#unit-tests)
+- [Bugs](#bugs)
 - [Deployment](#deployment)
     - [Version Control](#version-control)
     - [Deploying in Heroku](#deploying-in-heroku)
@@ -609,6 +610,8 @@ Each page checked with the help of WAVE Accessibility tool (https://wave.webaim.
 
 * ADD POST (desktop & mobile)
 
+The scores here were already improved upon working on the ``quills`` editor I have used however the mainly the editor is still affecting the scores.
+
 ![lighthouse_desktop_add_post](docs/readme_img/lighthouse_desktop_add_post.png)
 
 ![lighthouse_mobile_add_post](docs/readme_img/lighthouse_mobile_add_post.png)
@@ -636,7 +639,7 @@ All pages have passed the check:
 * Confirm post deletion page (activity_confirm_delete.html)
 * Post detail view, own posts(when edit and delete show) and posts that belong to other users (view_activity_details.html)
 
-ADD POST AND EDIT POST COME UP WITH ERROR WILL BE FIXED AND ADDED TO THE LIST
+See [Bugs](#bugs) section for details on 2 pages with an error.
 
 #### CSS
 
@@ -723,6 +726,15 @@ Couple warnings when running settings.py file. Too long lines of code. I tried m
 #### Unit Testing
 
 No unit testing performed at this stage. 
+
+## Bugs
+
+The following pages come up with an error which I wasn't able to fix, I have changed the value of attribute 'type' from 'hidden' to 'text' and then made it visually hidden all with Javascript code, This now shows correctly when checking code in WAVE tool but still remains the same when viewing 'view page source' and running it through validator. This error is due to using ``django_quill.fields`` and I wasn't able to find a solution to fix this.
+
+* add_activity.html
+* edit_activity.html
+
+![html_validator_check](docs/readme_img/html_validator_check.png)
 
 ## Deployment
 
