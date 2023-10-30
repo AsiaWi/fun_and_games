@@ -41,11 +41,13 @@
     {% include 'includes/footer.html' %}
     <!-- JS code -->
     <script>
-        // Code from code institute walkthrough
+        // Code from code institute walkthrough, if statement added to get rid off console error
         setTimeout(function () {
             let messages = document.getElementById('alert');
             let alert = new bootstrap.Alert(messages);
-            alert.close();
+            if (messages != undefined) {
+                alert.close();
+            }
         }, 3000);
         
     </script>
